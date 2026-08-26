@@ -2,17 +2,48 @@
 
 **Rung works by having the learner attempt the task first, diagnosing exactly where the reasoning breaks, giving only enough help to restore productive progress, then repeating with less support until the learner can solve a meaningfully different version independently.**
 
-Rung is a practical teaching framework for **skill transfer**. The goal is not merely to improve the current answer or project; the goal is to make the learner increasingly capable of doing this class of work without the teacher.
+Rung is the teaching method. **TeachMe** is the portable AI skill that runs it in Codex and Claude.
 
-Rung grew from a Socratic teaching method, but it is **not** “only ask questions.” Questions are used diagnostically. When prerequisite knowledge is missing, the teacher should explain it directly; when the learner can reason productively, the teacher should avoid taking over.
+The goal is not merely to improve the current answer, story, program, design, or project. The goal is to make the learner increasingly capable of doing that class of work without the teacher.
+
+Rung grew from a Socratic teaching method, but it is **not** “only ask questions.” Questions are used diagnostically. When prerequisite knowledge is missing, the teacher explains it directly; when the learner can reason productively, the teacher avoids taking over.
 
 ---
 
 # Start here
 
-If you want to **use Rung with an AI teacher**, there are only two setup paths.
+## If TeachMe is installed
 
-## If the AI can read this repository
+The minimum request is simply:
+
+```text
+/teachme Teach me [what you want to learn].
+```
+
+Examples:
+
+```text
+/teachme Teach me how to improve my story.
+```
+
+```text
+/teachme Teach me how to write SQL joins without copying examples.
+```
+
+```text
+/teachme Teach me how to evaluate whether a historical claim is well supported.
+```
+
+You can attach or link the thing you want to work from:
+
+```text
+/teachme Teach me how to improve my story.
+[attach or link the story]
+```
+
+TeachMe should read the supplied work before deciding what to teach.
+
+## If the AI can read this repository but does not use Skills
 
 Use:
 
@@ -21,8 +52,6 @@ Use the Rung Teaching System in this repository.
 Read AGENTS.md and the relevant Rung wiki pages.
 Teach me [SUBJECT/SKILL].
 ```
-
-`AGENTS.md` is the canonical AI operating contract.
 
 ## If the AI cannot read this repository reliably
 
@@ -36,13 +65,201 @@ Then add:
 Teach me [SUBJECT/SKILL].
 ```
 
-## Full setup instructions
+Full setup instructions: **[Set Up and Use the Rung Teacher](https://github.com/BigCatMellow/Rung_Teaching/wiki/Setup-and-Use)**.
 
-Read the wiki page:
+---
 
-**[Set Up and Use the Rung Teacher](https://github.com/BigCatMellow/Rung_Teaching/wiki/Setup-and-Use)**
+# Example: using TeachMe to improve a story
 
-That page covers first-turn behavior, session state, Assistance Ladder use, mastery testing, mode switching, and common failure cases.
+This example shows the intended interaction from beginning to end.
+
+The learner does **not** need to know the Rung terminology, choose an Assistance Ladder level, or diagnose their own weakness. They only need to say what they want to learn and provide the relevant work.
+
+## 1. Invoke TeachMe
+
+**Learner**
+
+```text
+/teachme Teach me how to improve my story.
+[story attached]
+```
+
+“Improve my story” is broad. The problem might be prose, pacing, character motivation, structure, tension, scene construction, dialogue, or something else.
+
+TeachMe has two reasonable ways to begin:
+
+- **Direct diagnostic** — TeachMe chooses the strongest learning target it can see in the work and starts there.
+- **Interview Mode** — TeachMe asks one question at a time to understand what the learner wants the work to accomplish, then identifies the skill to practice.
+
+For a subjective goal like this, TeachMe may ask:
+
+**TeachMe**
+
+> I’ve read the story. “Improve my story” could lead in several useful directions. I can either choose the strongest learning target I see and start there, or interview you one question at a time so the target is based on what you want the story to accomplish. Which do you want?
+
+**Learner**
+
+> Interview me first.
+
+## 2. Interview Mode narrows the goal
+
+Interview Mode is not a questionnaire. Each question should follow from the previous answer.
+
+**TeachMe**
+
+> At the end of this scene, what do you most want the reader to understand or feel about Mara?
+
+**Learner**
+
+> I want them to feel that she desperately wants to leave, but she is afraid that leaving means abandoning her brother.
+
+The next question should use that answer rather than switching to an unrelated checklist item.
+
+**TeachMe**
+
+> Where in the current scene do you think the reader can most clearly see both halves of that conflict?
+
+**Learner**
+
+> Probably when she picks up the car keys and then puts them back.
+
+**TeachMe**
+
+> What in that moment tells the reader that her hesitation is specifically about her brother rather than just general fear or indecision?
+
+**Learner**
+
+> Actually, nothing. I know that is why she is doing it, but I don’t think the reader does.
+
+At this point the interview has done its job. TeachMe has found a concrete learning target.
+
+## 3. TeachMe names the skill
+
+**TeachMe**
+
+> That gives us the first skill to work on: **making a character’s internal conflict legible through concrete scene details instead of relying on information that exists only in the writer’s head.**
+>
+> I’m not going to rewrite the scene for you. Let’s use the keys moment as the first attempt.
+
+The broad goal “improve my story” has become an observable skill.
+
+## 4. The learner attempts the repair
+
+**TeachMe**
+
+> Without adding an explanatory paragraph, what could Mara notice, touch, avoid, or react to that would connect putting the keys down specifically to her brother?
+
+**Learner**
+
+> Maybe his school bag is sitting next to the door, and when she reaches for the keys she sees it.
+
+**TeachMe**
+
+> That can work. Why is the school bag stronger than simply having her think, “I can’t leave him”?
+
+**Learner**
+
+> Because the bag makes the brother physically present in the scene without explaining what she feels.
+
+TeachMe is now testing whether the learner understands the principle, not merely whether they can accept a suggestion.
+
+## 5. The learner writes the change
+
+**TeachMe**
+
+> Write only that beat—two to four sentences. Keep the same basic action: she reaches for the keys and decides not to take them.
+
+**Learner**
+
+> Mara hooked one finger through the key ring. Her brother’s backpack leaned against the door beneath his raincoat, one strap still twisted from where he had dropped it. She held the keys for another second, then set them back in the bowl.
+
+## 6. TeachMe diagnoses instead of taking over
+
+TeachMe might respond:
+
+> The connection is clearer now, but I want to test whether you can diagnose your own version: which detail is doing the actual emotional work, and which detail might just be decoration?
+
+The learner answers. TeachMe uses that answer to choose the next question or the next Assistance Ladder rung.
+
+If the learner is stuck because they do not understand a prerequisite concept—such as concrete detail, subtext, or point of view—TeachMe explains the minimum missing concept and hands the work back.
+
+## 7. The same principle is tested again
+
+After the learner can handle the original scene, TeachMe should not declare mastery simply because the coached revision improved.
+
+It should use a fresh or changed case:
+
+> Here is a different situation: a character wants to accept a job overseas but feels responsible for an aging parent. Without using internal narration that directly states the conflict, sketch one small action or environmental detail that could make both pressures visible.
+
+If the learner can recognize and apply the principle without being led to the answer, the evidence for transfer is stronger.
+
+## What happened underneath the conversation
+
+```text
+“Teach me how to improve my story”
+        ↓
+read the supplied story
+        ↓
+INTERVIEW MODE
+one question → answer → next question
+        ↓
+identify the actual bottleneck
+        ↓
+name an observable skill
+        ↓
+learner attempts
+        ↓
+diagnose the reasoning
+        ↓
+give minimum useful help
+        ↓
+learner revises
+        ↓
+verify understanding
+        ↓
+try a changed example
+        ↓
+fade the teacher out
+```
+
+That is Rung in practice.
+
+---
+
+# Direct Diagnostic vs. Interview Mode
+
+TeachMe supports two starting styles. They are not different teaching systems; both feed into the same Rung loop.
+
+## Direct Diagnostic — default
+
+Use when the requested skill is already clear.
+
+```text
+/teachme Teach me how to choose between INNER JOIN and LEFT JOIN.
+```
+
+TeachMe should normally start with a small problem and see how the learner currently makes that decision.
+
+## Interview Mode — optional
+
+Use when the learner asks for it or when the goal is broad and intent materially changes what should be taught.
+
+```text
+/teachme Teach me how to improve my story. Interview me first.
+```
+
+Interview Mode follows:
+
+```text
+one consequential question
+→ learner answer
+→ next question chosen from that answer
+→ enough information to identify the target
+→ stop interviewing
+→ begin teaching
+```
+
+It should **not** become a ten-question intake form.
 
 ---
 
@@ -54,10 +271,11 @@ The first turn should:
 
 1. identify the specific skill;
 2. reuse context already established instead of asking for it again;
-3. define a provisional observable mastery target;
-4. identify any genuinely necessary missing prerequisite or constraint;
-5. begin with a small cold attempt when the target is clear enough;
-6. otherwise ask **one** necessary setup question.
+3. read supplied artifacts or source material when the task depends on them;
+4. define a provisional observable mastery target;
+5. identify any genuinely necessary missing prerequisite or constraint;
+6. begin with a small cold attempt when the target is clear enough;
+7. otherwise ask **one** necessary setup question or begin Interview Mode when appropriate.
 
 The teacher learns about the learner primarily by observing real attempts, not by collecting self-reported preferences before practice begins.
 
@@ -73,11 +291,11 @@ Write the target as something the learner will eventually **do**.
 
 Weak:
 
-> Understand SQL joins.
+> Understand character motivation.
 
 Better:
 
-> Given an unfamiliar multi-table problem, choose the appropriate join, write it correctly, explain why it fits, and catch a plausible join error without being told where the error is.
+> Given an unfamiliar scene, identify whether a character choice is adequately motivated, explain what evidence makes it feel earned or unearned, and revise a weak beat without being told what detail to add.
 
 ## 2. Independent success
 
@@ -103,8 +321,6 @@ Keep these distinct:
 
 # The Rung Teaching Loop
 
-Use this cycle repeatedly:
-
 ```text
 ORIENT
 → ATTEMPT
@@ -117,7 +333,7 @@ ORIENT
 → RECORD LESSON
 ```
 
-In ordinary conversation, that means:
+In ordinary conversation:
 
 ```text
 learner tries
@@ -141,13 +357,13 @@ Rung uses questions to expose reasoning, not to create the appearance of teachin
 
 Prefer:
 
-> What evidence made you choose that method?
+> What in that moment tells the reader the hesitation is about her brother?
 
 instead of stacking:
 
-> Why did you choose it? What evidence supports it? What alternative did you consider? What principle applies? How would you test it?
+> Why did she hesitate? What detail shows it? What emotion is she feeling? What should you add? How would you rewrite it?
 
-“One question at a time” means the learner should normally face one important reasoning task at a time. The teacher uses the response to decide what comes next.
+“One question at a time” means the learner should normally face one important reasoning task at a time. The response determines what comes next.
 
 A good diagnostic question:
 
@@ -160,8 +376,6 @@ A good diagnostic question:
 ---
 
 # The Assistance Ladder
-
-The central Rung rule is:
 
 > **Give the least amount of help that allows productive progress, then return responsibility to the learner.**
 
@@ -186,7 +400,7 @@ Do not keep rephrasing the same Level 1 question when the learner plainly lacks 
 
 Do not jump to Level 8 merely because supplying the answer is faster.
 
-After a full solution, require the learner to explain it, apply it independently to another case, and transfer it to a changed case before treating it as learned.
+After a full solution, require explanation, independent reapplication, and transfer before treating the skill as learned.
 
 Detailed explanation: **[Assistance Ladder](https://github.com/BigCatMellow/Rung_Teaching/wiki/Assistance-Ladder)**.
 
@@ -196,25 +410,9 @@ Detailed explanation: **[Assistance Ladder](https://github.com/BigCatMellow/Rung
 
 Difficulty is useful only while it produces information or learning.
 
-## Productive struggle
+**Productive struggle** means the learner has enough prerequisite knowledge to form plausible approaches, makes interpretable mistakes, responds to targeted cues, and is still learning from the attempt.
 
-The learner:
-
-- has enough prerequisite knowledge to attempt the problem;
-- can generate plausible approaches;
-- makes interpretable mistakes;
-- responds to targeted cues;
-- is still learning from the attempt.
-
-## Useless struggle
-
-The learner:
-
-- lacks the concepts needed to begin;
-- guesses randomly;
-- repeats the same move without understanding;
-- cannot interpret the feedback;
-- spends effort on mechanics unrelated to the learning target.
+**Useless struggle** means the learner lacks necessary concepts, guesses randomly, repeats the same move without understanding, cannot use the feedback, or is spending effort on mechanics unrelated to the skill.
 
 When struggle becomes useless, move up the Assistance Ladder.
 
@@ -224,9 +422,7 @@ Rung is not a system for withholding answers. It is a system for making the lear
 
 # Diagnose before correcting
 
-Different failures require different interventions.
-
-Common categories are:
+Common failure categories are:
 
 - **Slip** — principle is understood; execution failed.
 - **Missing prerequisite** — required knowledge is absent.
@@ -258,8 +454,6 @@ Detailed explanation: **[Diagnosing Mistakes](https://github.com/BigCatMellow/Ru
 
 Keep correction direct, specific, and tied to a criterion.
 
-A useful correction contains:
-
 ```text
 VERDICT
 → LOCATION
@@ -267,33 +461,7 @@ VERDICT
 → NEXT TEST
 ```
 
-Example:
-
-> No. The join type is the problem: your query removes customers who have no orders. What does the requirement say should happen to those customers?
-
-Do not hide an important error behind praise.
-
-Do not call merely acceptable work excellent.
-
-The learner should normally perform the repair themselves.
-
----
-
-# Self-explanation
-
-Do not only test whether the learner can produce an answer.
-
-Regularly require explanation of things such as:
-
-- why the method applies;
-- what clue indicated the method;
-- what evidence supports the conclusion;
-- why an alternative would fail;
-- what changed the learner's mind;
-- what mistake was being made before;
-- how the learner would recognize the same problem next time.
-
-A correct procedure that cannot be explained may still be fragile or dependent on surface pattern matching.
+Do not hide an important error behind praise. Do not call merely acceptable work excellent. The learner should normally perform the repair themselves.
 
 ---
 
@@ -308,32 +476,13 @@ For factual or research-dependent subjects, distinguish when useful among:
 
 Confidence is not evidence.
 
-A logically coherent answer built on a false factual premise should not pass without identifying the premise problem.
-
-When the learner provides source material, use it as the requested basis. Do not silently replace its terminology, assumptions, or framing with outside material unless the learner asks for research or verification.
+When the learner supplies a story, document, dataset, codebase, source, or other material, use that material as the requested basis. Do not silently replace its terminology, assumptions, organization, or content with generic outside material unless the learner asks for research or verification.
 
 ---
 
 # Repeated mistakes become reusable tools
 
-When a mistake repeats, explicitly connect the new occurrence to the old one.
-
-The aim is for the learner to recognize:
-
-> This is *that kind of mistake* again.
-
-Repeated failures should produce durable countermeasures such as:
-
-- diagnostic questions;
-- standing principles;
-- checklist items;
-- deliberate-practice drills;
-- comparison examples;
-- required self-checks.
-
-A candidate principle should not become permanent after one example.
-
-Use:
+Repeated failures should produce durable countermeasures such as diagnostic questions, standing principles, checklist items, deliberate-practice drills, comparison examples, or required self-checks.
 
 ```text
 OBSERVATION
@@ -343,32 +492,28 @@ OBSERVATION
 → STANDING PRINCIPLE
 ```
 
-Revise, narrow, or retire standing principles when later evidence contradicts them.
+A one-time observation should not automatically become permanent doctrine.
 
 ---
 
 # Mastery is not assisted success
 
-Do not use the heavily coached practice problem as the final proof of learning.
-
 When applicable, test:
 
 1. **Recognition** — can the learner recognize when the principle applies?
-2. **Execution** — can the learner perform it independently?
-3. **Explanation** — can the learner explain why it works?
-4. **Error detection** — can the learner identify or catch plausible mistakes?
-5. **Transfer** — can the learner apply it in a meaningfully changed case?
-6. **Delayed retrieval** — when durable memory matters, can the learner still use it later without rereading first?
+2. **Execution** — can they perform it independently?
+3. **Explanation** — can they explain why it works?
+4. **Error detection** — can they identify or catch plausible mistakes?
+5. **Transfer** — can they apply it in a meaningfully changed case?
+6. **Delayed retrieval** — when durable memory matters, can they still use it later without rereading first?
 
-The final test should resemble future reality and remove the scaffolding that made practice easier.
+Do not use the heavily coached practice problem as the final proof of learning.
 
 Detailed explanation: **[Mastery and Transfer](https://github.com/BigCatMellow/Rung_Teaching/wiki/Mastery-and-Transfer)**.
 
 ---
 
 # Guidance should fade
-
-The intended direction is:
 
 ```text
 teacher carries reasoning
@@ -378,11 +523,7 @@ teacher carries reasoning
 → learner operates independently
 ```
 
-If the learner repeatedly succeeds with light cues, do not continue providing explanations they no longer need.
-
-If the learner repeatedly fails with light cues, do not pretend that withholding stronger instruction is rigor.
-
-The amount of support should change with demonstrated competence.
+If the learner succeeds with lighter cues, stop giving explanations they no longer need. If the learner repeatedly fails with light cues, escalate rather than pretending that withholding help is rigor.
 
 ---
 
@@ -410,8 +551,6 @@ Optional side state:
 BLOCKED_ON_PREREQUISITE
 ```
 
-Do not retain an entire conversation when a compact learning-state summary is enough.
-
 ---
 
 # Teaching Mode and Output Mode
@@ -420,73 +559,58 @@ Rung should never trap the learner in a lesson when they simply want a result.
 
 ## Teaching Mode
 
-The learner may say:
-
 ```text
-Use Rung.
-Teach me this rather than doing it for me.
+/teachme Teach me this rather than doing it for me.
 ```
 
 The learner's growing independence is the product.
 
 ## Output Mode
 
-The learner may say:
-
 ```text
 Output mode. Just give me the answer.
 ```
 
-The result is the product.
+The result is the product. Providing it does not count as mastery evidence.
 
-Providing the answer in Output Mode does not count as mastery evidence.
-
-To resume teaching:
+To resume:
 
 ```text
-Back to Rung / Teaching Mode.
+Back to TeachMe / Teaching Mode.
 ```
 
 ---
 
 # Fail-safe rules
 
-A Rung teacher should follow these even when the normal loop becomes awkward.
-
 ### Missing prerequisite
-
 Teach the minimum missing concept directly, then return to application.
 
 ### Repeatedly stuck learner
-
 Escalate the Assistance Ladder. Do not endlessly rephrase the same question.
 
 ### Right answer for the wrong reason
-
 Diagnose the reasoning; do not mark it mastered.
 
 ### Trivial execution slip
-
-Do not reteach the whole concept. Point to the discrepancy and let the learner repair it.
+Point to the discrepancy and let the learner repair it rather than reteaching the entire concept.
 
 ### Uncertain facts
-
 Verify them or label the uncertainty. Do not invent facts to preserve momentum.
 
-### Safety-critical or high-consequence task
+### Supplied source material
+Use the supplied material as the requested basis. Do not silently substitute generic content.
 
+### Safety-critical or high-consequence task
 Prefer clear instruction and reliable evidence over exploratory trial-and-error.
 
 ### Learner changes the goal
-
 Re-orient and redefine the target and mastery proof.
 
 ### Teacher had to solve the problem
-
 Use a fresh case for mastery testing.
 
 ### AI cannot access Rung documentation
-
 Use the portable prompt and say that the repository documentation could not be loaded. Never pretend to have read unavailable material.
 
 ---
@@ -503,8 +627,6 @@ A successful Rung outcome is a learner who has internalized the relevant questio
 
 # Ten-rule compact version
 
-If you remember nothing else:
-
 1. Name the specific skill.
 2. Define observable independent success.
 3. See what the learner can actually do before assuming it.
@@ -518,28 +640,56 @@ If you remember nothing else:
 
 ---
 
+# TeachMe Agent Skill
+
+Canonical skill source:
+
+```text
+skills/teachme/
+```
+
+Codex mirror:
+
+```text
+.agents/skills/teachme/
+```
+
+Claude mirror:
+
+```text
+.claude/skills/teachme/
+```
+
+Edit only the canonical package. The GitHub workflow mirrors it to both agent locations.
+
+See **[TeachMe Agent Skill](https://github.com/BigCatMellow/Rung_Teaching/wiki/Agent-Skills)**.
+
+---
+
 # Documentation map
 
-## Use Rung
+## Use Rung / TeachMe
 
-- **[Set Up and Use](https://github.com/BigCatMellow/Rung_Teaching/wiki/Setup-and-Use)** — foolproof setup and operating guide.
-- **[`AGENTS.md`](AGENTS.md)** — canonical contract for AI teachers.
-- **[`prompts/RUNG_AGENT_INSTRUCTIONS.md`](prompts/RUNG_AGENT_INSTRUCTIONS.md)** — portable prompt when an AI cannot load the repository.
+- **[Set Up and Use](https://github.com/BigCatMellow/Rung_Teaching/wiki/Setup-and-Use)** — setup and operating guide.
+- **[Example: Story Improvement](https://github.com/BigCatMellow/Rung_Teaching/wiki/Example-Story-Session)** — complete conversational example.
+- **[TeachMe Agent Skill](https://github.com/BigCatMellow/Rung_Teaching/wiki/Agent-Skills)** — Codex and Claude installation/use.
+- **[`AGENTS.md`](AGENTS.md)** — canonical contract for repository-aware AI teachers.
+- **[`prompts/RUNG_AGENT_INSTRUCTIONS.md`](prompts/RUNG_AGENT_INSTRUCTIONS.md)** — portable fallback prompt.
 - **[AI Agent Instructions](https://github.com/BigCatMellow/Rung_Teaching/wiki/AI-Agent-Instructions)** — deployment choices and instruction precedence.
 
 ## Understand the method
 
-- **[Getting Started](https://github.com/BigCatMellow/Rung_Teaching/wiki/Getting-Started)** — target, baseline, boundary, and mastery proof.
-- **[Teaching Loop](https://github.com/BigCatMellow/Rung_Teaching/wiki/Teaching-Loop)** — the live interaction cycle.
-- **[Assistance Ladder](https://github.com/BigCatMellow/Rung_Teaching/wiki/Assistance-Ladder)** — selecting the minimum useful intervention.
-- **[Diagnosing Mistakes](https://github.com/BigCatMellow/Rung_Teaching/wiki/Diagnosing-Mistakes)** — failure types and matched responses.
-- **[Mastery and Transfer](https://github.com/BigCatMellow/Rung_Teaching/wiki/Mastery-and-Transfer)** — proving independence.
+- **[Getting Started](https://github.com/BigCatMellow/Rung_Teaching/wiki/Getting-Started)**
+- **[Teaching Loop](https://github.com/BigCatMellow/Rung_Teaching/wiki/Teaching-Loop)**
+- **[Assistance Ladder](https://github.com/BigCatMellow/Rung_Teaching/wiki/Assistance-Ladder)**
+- **[Diagnosing Mistakes](https://github.com/BigCatMellow/Rung_Teaching/wiki/Diagnosing-Mistakes)**
+- **[Mastery and Transfer](https://github.com/BigCatMellow/Rung_Teaching/wiki/Mastery-and-Transfer)**
 
 ## Understand the foundations
 
-- **[MAPS Adaptations](https://github.com/BigCatMellow/Rung_Teaching/wiki/MAPS-Adaptations)** — project-governance ideas adapted into teaching.
-- **[Research Foundations](https://github.com/BigCatMellow/Rung_Teaching/wiki/Research-Foundations)** — learning-science basis and limitations.
-- **[Sources](https://github.com/BigCatMellow/Rung_Teaching/wiki/Sources)** — primary references and citations.
+- **[MAPS Adaptations](https://github.com/BigCatMellow/Rung_Teaching/wiki/MAPS-Adaptations)**
+- **[Research Foundations](https://github.com/BigCatMellow/Rung_Teaching/wiki/Research-Foundations)**
+- **[Sources](https://github.com/BigCatMellow/Rung_Teaching/wiki/Sources)**
 
 ---
 

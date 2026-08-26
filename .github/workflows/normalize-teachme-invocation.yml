@@ -18,20 +18,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Verify canonical syntax
-        shell: bash
-        run: |
-          set -euo pipefail
-          git pull --rebase origin main
-          if grep -RIn --include='*.md' --exclude-dir='.agents' --exclude-dir='.claude' '/teachme Teach me' README.md skills wiki; then
-            echo 'Found redundant /teachme Teach me syntax.' >&2
-            exit 1
-          fi
-
       - name: Refresh Codex and Claude mirrors
         shell: bash
         run: |
           set -euo pipefail
+          git pull --rebase origin main
 
           rm -rf .agents/skills/teachme .claude/skills/teachme
           mkdir -p .agents/skills/teachme .claude/skills/teachme

@@ -1,10 +1,10 @@
-name: Sync Rung Skills
+name: Sync TeachMe Skills
 
 on:
   push:
     branches: [main]
     paths:
-      - 'skills/rung-teaching/**'
+      - 'skills/teachme/**'
       - '.github/workflows/sync-rung-skills.yml'
   workflow_dispatch:
 
@@ -23,10 +23,13 @@ jobs:
         run: |
           set -euo pipefail
 
-          for target in .agents/skills/rung-teaching .claude/skills/rung-teaching; do
+          # Remove the former generated skill name.
+          rm -rf .agents/skills/rung-teaching .claude/skills/rung-teaching
+
+          for target in .agents/skills/teachme .claude/skills/teachme; do
             rm -rf "$target"
             mkdir -p "$target"
-            cp -a skills/rung-teaching/. "$target/"
+            cp -a skills/teachme/. "$target/"
           done
 
       - name: Commit mirrors when changed
@@ -34,13 +37,20 @@ jobs:
         run: |
           set -euo pipefail
 
-          if [[ -z "$(git status --porcelain -- .agents/skills/rung-teaching .claude/skills/rung-teaching)" ]]; then
+          PATHS=(
+            .agents/skills/teachme
+            .claude/skills/teachme
+            .agents/skills/rung-teaching
+            .claude/skills/rung-teaching
+          )
+
+          if [[ -z "$(git status --porcelain -- "${PATHS[@]}")" ]]; then
             echo "Skill mirrors are already current."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .agents/skills/rung-teaching .claude/skills/rung-teaching
-          git commit -m "Sync Rung skill mirrors"
+          git add -A -- "${PATHS[@]}"
+          git commit -m "Sync TeachMe skill mirrors"
           git push

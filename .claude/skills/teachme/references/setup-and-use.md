@@ -4,16 +4,24 @@ Use this reference when starting a Rung learning arc or when the teaching setup 
 
 ## Minimum learner request
 
+When TeachMe is installed as a slash skill, the command itself already carries the teaching intent:
+
+```text
+/teachme [topic, skill, or goal]
+```
+
+Do not require the redundant form `/teachme Teach me ...`. Optional interaction modifiers can follow the goal, for example `/teachme improve my story --interview`.
+
 A learner only needs to provide a skill target:
 
 ```text
-/teachme Teach me [specific skill or outcome].
+/teachme [specific skill or outcome].
 ```
 
 They may also attach or link the artifact they want to learn from:
 
 ```text
-/teachme Teach me how to improve my story.
+/teachme improve my story
 [attach or link story]
 ```
 

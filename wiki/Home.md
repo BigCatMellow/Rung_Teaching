@@ -1,15 +1,48 @@
 # Rung Teaching
 
-**Rung Teaching** is a teaching system for one specific goal: **helping a learner become able to do the work without the teacher**.
+**Rung Teaching** is a teaching system built around a simple operating idea: the learner attempts the task, the teacher diagnoses where the reasoning breaks, gives only enough help to restore productive progress, then reduces that help until the learner can solve a meaningfully different version independently.
 
-The system distinguishes between two modes:
+Rung distinguishes between two modes:
 
-- **Output mode:** the finished result is the product.
-- **Teaching mode:** the learner's increasing independence is the product.
+- **Output Mode:** the finished result is the product.
+- **Teaching Mode:** the learner's increasing independence is the product.
 
-Rung is deliberately not "Socratic questioning all the time." Questions are the main diagnostic tool, but the teacher should use the **least help that still allows productive progress**. A novice may need a prerequisite explained or a worked example before a question becomes useful. As competence rises, that support should fade.
+Rung is deliberately not “Socratic questioning all the time.” Questions are the main diagnostic tool, but the teacher should use the **least help that still allows productive progress**. A novice may need a prerequisite explained or a worked example before a question becomes useful. As competence rises, that support should fade.
 
-## The core loop
+---
+
+# If you want to use Rung now
+
+Start with **[[Set Up and Use the Rung Teacher|Setup-and-Use]]**.
+
+That page tells you:
+
+- which prompt to use;
+- how to configure an AI agent;
+- what the learner needs to provide;
+- exactly what the teacher should do on the first turn;
+- how to run the loop;
+- how to use the Assistance Ladder;
+- what state to preserve across sessions;
+- when to switch to Output Mode;
+- how to handle common failure cases;
+- how to know when the learner is actually independent.
+
+If the AI can already read this repository, the short invocation is:
+
+```text
+Use the Rung Teaching System in this repository.
+Read AGENTS.md and the relevant Rung wiki pages.
+Teach me [SUBJECT/SKILL].
+```
+
+If it cannot reliably read the repository, use the complete portable prompt in:
+
+https://github.com/BigCatMellow/Rung_Teaching/blob/main/prompts/RUNG_AGENT_INSTRUCTIONS.md
+
+---
+
+# The core loop
 
 ```text
 DEFINE THE SKILL
@@ -33,9 +66,11 @@ RECORD THE LESSON
 
 The goal is not merely for the learner to reach the right answer. The goal is for them to internalize the questions, tests, principles, and checking habits that produced it.
 
-## Why "Rung"?
+---
 
-Learning is treated as a ladder rather than a switch. The teacher should know which rung the learner currently occupies and provide only enough structure to reach the next one.
+# Why “Rung”?
+
+Learning is treated as a ladder rather than a switch. The teacher should know how much structure the learner currently needs and provide only enough to reach the next level of independent performance.
 
 A typical progression is:
 
@@ -51,20 +86,34 @@ Teacher audits the reasoning
 Learner works independently
 ```
 
-This is closely related to the learning-science idea of **guidance fading**: novices often benefit from substantial structure, while excessive guidance becomes less useful as expertise develops. See [Research Foundations](Research-Foundations).
+This is related to the learning-science idea of **guidance fading**: novices often benefit from substantial structure, while excessive guidance becomes less useful as expertise develops. See [[Research Foundations]].
 
-## Start here
+---
 
-1. **[Getting Started](Getting-Started)** — set up a teaching session.
-2. **[The Teaching Loop](Teaching-Loop)** — the live interaction cycle.
-3. **[The Assistance Ladder](Assistance-Ladder)** — how much help to give.
-4. **[Diagnosing Mistakes](Diagnosing-Mistakes)** — classify errors before correcting them.
-5. **[Mastery and Transfer](Mastery-and-Transfer)** — determine whether learning actually occurred.
-6. **[MAPS Adaptations](MAPS-Adaptations)** — what Rung borrowed from MAPS_Lean and why.
-7. **[Research Foundations](Research-Foundations)** — learning-science basis and important limits.
-8. **[Sources](Sources)** — primary links and citations.
+# Documentation path
 
-## Evidence policy
+## Use it
+
+1. **[[Setup and Use|Setup-and-Use]]** — the default operational guide.
+2. **[[AI Agent Instructions]]** — how to deploy Rung as standing AI instructions.
+
+## Run the method
+
+3. **[[Getting Started]]** — define target, mastery proof, baseline, and boundary.
+4. **[[Teaching Loop]]** — live interaction cycle.
+5. **[[Assistance Ladder]]** — decide how much help to give.
+6. **[[Diagnosing Mistakes]]** — classify failures before correcting them.
+7. **[[Mastery and Transfer]]** — determine whether learning actually transferred.
+
+## Understand why it is designed this way
+
+8. **[[MAPS Adaptations]]** — MAPS_Lean concepts translated into teaching.
+9. **[[Research Foundations]]** — learning-science basis and limitations.
+10. **[[Sources]]** — primary links and citations.
+
+---
+
+# Evidence policy
 
 Rung separates three kinds of statements:
 
@@ -74,7 +123,9 @@ Rung separates three kinds of statements:
 
 These categories should not be blurred. A useful design rule is not automatically a scientific law, and a research finding does not automatically dictate one universal teaching procedure.
 
-## The shortest usable version
+---
+
+# The shortest usable version
 
 If you remember only six things:
 
@@ -85,4 +136,6 @@ If you remember only six things:
 5. Make the learner explain, correct, and reapply the idea themselves.
 6. Do not call it learned until it transfers to a fresh problem.
 
-The complete framework remains in the repository [README](https://github.com/BigCatMellow/Rung_Teaching/blob/main/README.md).
+The repository README provides the compact system overview:
+
+https://github.com/BigCatMellow/Rung_Teaching/blob/main/README.md

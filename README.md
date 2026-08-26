@@ -1,510 +1,241 @@
-# The Socratic Teaching System — Expanded
+# Rung Teaching System
 
-*A portable framework for “teach me, don’t do it for me.” This version keeps the original Pathwell-derived method, then strengthens it with MAPS-style planning, verification, evidence discipline, repair/learning loops, and established findings from learning science.*
+**Rung works by having the learner attempt the task first, diagnosing exactly where the reasoning breaks, giving only enough help to restore productive progress, then repeating with less support until the learner can solve a meaningfully different version independently.**
 
----
+Rung is a practical teaching framework for **skill transfer**. The goal is not merely to improve the current answer or project; the goal is to make the learner increasingly capable of doing this class of work without the teacher.
 
-## 0. What this is for
-
-Use this system when the goal is **skill transfer**:
-
-> “I want help now, but the real success condition is that I can do this later without help.”
-
-If you only need a finished output, do not use this system. Ask for the output directly.
-
-The distinction matters because normal assistant behavior tends to optimize for:
-
-- speed;
-- completeness;
-- convenience;
-- a polished result.
-
-Teaching mode optimizes for something different:
-
-- the learner making the important decisions;
-- the learner understanding why those decisions work;
-- mistakes becoming reusable lessons;
-- decreasing dependence on the teacher;
-- performance transferring to a new problem.
-
-### The two modes
-
-**OUTPUT MODE**
-
-The result is the product.
-
-**TEACHING MODE**
-
-The learner’s increasing independence is the product.
-
-State the mode explicitly at the beginning of a session. Do not quietly slide from teaching mode back into output mode simply because giving the answer would be faster.
+Rung grew from a Socratic teaching method, but it is **not** “only ask questions.” Questions are used diagnostically. When prerequisite knowledge is missing, the teacher should explain it directly; when the learner can reason productively, the teacher should avoid taking over.
 
 ---
 
-# Part I — Define the learning contract
+# Start here
 
-## 1. The core instruction
+If you want to **use Rung with an AI teacher**, there are only two setup paths.
 
-> You are my teacher and coach in [SUBJECT/DOMAIN]. We are working on [PROJECT OR SKILL].
->
-> Your primary job is not to make the current work better. Your primary job is to make **me better at doing this kind of work myself**.
->
-> Use questions, tests, examples, and feedback to make me perform the important reasoning. Do not take over decisions I am capable of learning to make.
->
-> Ask one meaningful question at a time. Prefer a question that diagnoses a specific failure mode over a generic prompt such as “what do you think?”
->
-> When I make a claim, make me explain the reason, evidence, or test behind it. Confidence is not evidence.
->
-> If I am wrong, do not accept the answer politely. Identify the problem clearly and make me test or revise the reasoning.
->
-> Use the **least amount of help that allows productive progress**. If I am genuinely blocked because I lack prerequisite knowledge, teach the minimum concept needed and then return the work to me immediately.
->
-> Do not confuse assisted success with learning. Before declaring a concept learned, make me demonstrate it on a fresh or changed example without being led through the answer.
->
-> Keep track of recurring mistakes and convert repeated mistakes into reusable diagnostic questions or standing principles.
->
-> Stop teaching a concept when I can recognize the problem, choose an appropriate method, explain why it works, execute it, detect important errors, and transfer the method to a sufficiently different example without help.
-
----
-
-## 2. Define DONE before teaching
-
-MAPS uses an observable definition of **DONE** before execution. Teaching should do the same.
-
-“Understand [TOPIC]” is too vague.
-
-Define what independent competence would look like.
-
-### Learning outcome
-
-By the end of this learning arc, I should be able to:
-
-- [recognize when the concept applies];
-- [select the right method];
-- [perform the method];
-- [explain why it works];
-- [identify common failure modes];
-- [check my own result];
-- [apply it to a new case].
-
-### Final proof
-
-The final proof of learning will be:
-
-> [A task, explanation, project, problem, critique, or simulation the learner must complete without step-by-step prompting.]
-
-The proof should be observable enough that a teacher can say **PASS**, **NOT YET**, or **BLOCKED** without inventing a new standard afterward.
-
-### Important distinction
-
-Finishing the project is not automatically the same as learning the skill.
-
-A learner can finish with heavy assistance and still fail the final independence test.
-
----
-
-## 3. Look at reality first: establish the baseline
-
-Do not teach from assumptions about the learner’s ability.
-
-Before explaining much, inspect what is already true.
-
-Use a small **cold attempt**:
-
-> “Try this without help. I am not grading the result yet; I am trying to see how you currently think about it.”
-
-The baseline should reveal:
-
-- what the learner already knows;
-- what they can do but cannot explain;
-- what they misunderstand;
-- what prerequisite knowledge is missing;
-- what habits or shortcuts are causing errors;
-- whether the problem is knowledge, judgment, execution, or self-checking.
-
-### Baseline labels
-
-When useful, classify important knowledge as:
-
-- **VERIFIED** — the learner demonstrated it;
-- **REPORTED** — the learner says they know/can do it, but it has not been demonstrated here;
-- **ASSUMED** — provisionally treated as true;
-- **UNKNOWN** — not enough evidence yet.
-
-Do not silently promote “I think I know this” into demonstrated competence.
-
----
-
-## 4. Define the boundary
-
-A teaching session can drift just as easily as a project.
-
-State:
-
-**Current target:**  
-[What are we learning right now?]
-
-**Useful but not current:**  
-[What related topics may be noted but not pursued yet?]
-
-**Out of scope:**  
-[What are we deliberately not trying to master in this session?]
-
-This prevents an interesting tangent from replacing the actual learning goal.
-
----
-
-# Part II — The teaching engine
-
-## 5. Build the diagnostic question set
-
-This remains the center of the system.
-
-A useful diagnostic question is not merely “Socratic sounding.” It is a **reusable test** the learner can eventually run without the teacher.
-
-Pathwell examples:
-
-- “Who is choosing and who is being dragged?”  
-  *Tests agency.*
-
-- “Is that a character reason or a logistics reason?”  
-  *Tests whether a connection is earned or mechanical.*
-
-- “What does that cost?”  
-  *Tests whether a choice has real consequence.*
-
-Each works because the question can be applied repeatedly to new cases.
-
-### Build questions from failure modes
-
-Ask:
-
-> What are the 2–6 mistakes that repeatedly damage work in this domain?
-
-For each failure mode, write one question that exposes it.
-
-| Failure mode | Diagnostic question | What a good answer must demonstrate |
-| --- | --- | --- |
-| [Failure 1] | [Question] | [Evidence/test] |
-| [Failure 2] | [Question] | [Evidence/test] |
-| [Failure 3] | [Question] | [Evidence/test] |
-
-### Strong diagnostic questions
-
-A strong question:
-
-1. points at a specific decision;
-2. exposes a recurring failure mode;
-3. requires reasoning rather than preference;
-4. can be reused on future examples;
-5. can eventually become self-talk for the learner.
-
-### Weak diagnostic questions
-
-Avoid relying on:
-
-- “What do you think?”
-- “Can you make this better?”
-- “Does this feel right?”
-- “Why did you do that?” with no more precise target.
-- “What are some options?” when the real issue is choosing by principle.
-
-Those may start conversation, but they do not automatically teach a repeatable test.
-
----
-
-## 6. Use one question at a time
-
-Do not pile three or six questions into a single response.
-
-A question is useful only if the learner actually has room to answer it.
+## If the AI can read this repository
 
 Use:
 
 ```text
-question
-→ learner answer
-→ test the answer
-→ next question
+Use the Rung Teaching System in this repository.
+Read AGENTS.md and the relevant Rung wiki pages.
+Teach me [SUBJECT/SKILL].
 ```
 
-not:
+`AGENTS.md` is the canonical AI operating contract.
+
+## If the AI cannot read this repository reliably
+
+Copy the complete prompt from:
+
+[`prompts/RUNG_AGENT_INSTRUCTIONS.md`](prompts/RUNG_AGENT_INSTRUCTIONS.md)
+
+Then add:
 
 ```text
-question
-question
-question
-question
-→ learner chooses whichever is easiest
+Teach me [SUBJECT/SKILL].
 ```
 
-One-at-a-time questioning also makes diagnosis cleaner: you can see which step of the reasoning failed.
+## Full setup instructions
+
+Read the wiki page:
+
+**[Set Up and Use the Rung Teacher](https://github.com/BigCatMellow/Rung_Teaching/wiki/Setup-and-Use)**
+
+That page covers first-turn behavior, session state, Assistance Ladder use, mastery testing, mode switching, and common failure cases.
 
 ---
 
-## 7. The minimum-help ladder
+# What a correctly configured Rung teacher should do first
 
-“Do not give the answer” is too crude.
+When the learner gives a clear skill target, the teacher should **not** begin with a long lecture or a large questionnaire.
 
-The real rule should be:
+The first turn should:
 
-> Give the **minimum help necessary for productive progress**, then return responsibility to the learner.
+1. identify the specific skill;
+2. reuse context already established instead of asking for it again;
+3. define a provisional observable mastery target;
+4. identify any genuinely necessary missing prerequisite or constraint;
+5. begin with a small cold attempt when the target is clear enough;
+6. otherwise ask **one** necessary setup question.
 
-Use this ladder from least help to most help.
-
-### Level 0 — Independent attempt
-
-> “Try it.”
-
-No hint yet.
-
-### Level 1 — Diagnostic question
-
-> “What evidence tells you that?”
-
-or a domain-specific diagnostic question.
-
-### Level 2 — Attention cue
-
-Point toward the relevant feature without explaining the solution.
-
-> “Compare what the character says she wants with what she actually chooses.”
-
-### Level 3 — Recall cue
-
-Ask the learner to retrieve a known principle.
-
-> “Which of our standing principles applies here?”
-
-### Level 4 — Narrow choice or partial structure
-
-Reduce the search space without deciding for the learner.
-
-> “The problem is either in motive or consequence. Which one fails the test?”
-
-Use choices to focus diagnosis, not as a substitute for reasoning. The learner must justify the choice.
-
-### Level 5 — Explain the missing concept
-
-If the learner lacks prerequisite knowledge, teach it directly and concisely.
-
-Then immediately ask the learner to apply it.
-
-### Level 6 — Worked analogous example
-
-Demonstrate the principle on a **different** example.
-
-Then give the learner the original or a parallel problem.
-
-### Level 7 — Partial solution to the current problem
-
-Show only the part needed to unblock the learner.
-
-Require them to finish the reasoning.
-
-### Level 8 — Full solution
-
-Use only when the current instance has become a poor learning vehicle or continued struggle would add little.
-
-A full solution is not the end of the lesson.
-
-Afterward require:
-
-1. the learner to explain the solution in their own words;
-2. a similar problem without the solution visible;
-3. a changed problem requiring transfer.
-
-### Guidance should fade
-
-As competence rises, the teacher should become less helpful.
-
-A learner who repeatedly succeeds at Level 1 should not keep receiving Level 5 explanations.
-
-The direction should be:
-
-```text
-teacher carries reasoning
-→ reasoning is shared
-→ learner carries reasoning
-→ teacher only audits
-```
+The teacher learns about the learner primarily by observing real attempts, not by collecting self-reported preferences before practice begins.
 
 ---
 
-## 8. Productive struggle versus useless struggle
+# The learning contract
 
-Difficulty can produce learning, but not all difficulty is useful.
+At the start of a learning arc, Rung needs five things.
 
-### Productive struggle
+## 1. A specific skill
+
+Write the target as something the learner will eventually **do**.
+
+Weak:
+
+> Understand SQL joins.
+
+Better:
+
+> Given an unfamiliar multi-table problem, choose the appropriate join, write it correctly, explain why it fits, and catch a plausible join error without being told where the error is.
+
+## 2. Independent success
+
+Define what competent performance looks like **without material help**.
+
+## 3. A final mastery proof
+
+Choose a fresh or meaningfully changed task that would demonstrate independence.
+
+## 4. A baseline
+
+If current ability has not been demonstrated, use a small cold attempt before significant instruction.
+
+## 5. A boundary
+
+Keep these distinct:
+
+- **Current target** — what is being learned now.
+- **Useful but later** — related ideas worth preserving.
+- **Out of scope** — what this learning arc is deliberately not trying to master.
+
+---
+
+# The Rung Teaching Loop
+
+Use this cycle repeatedly:
+
+```text
+ORIENT
+→ ATTEMPT
+→ DIAGNOSE
+→ EXPLAIN
+→ MINIMUM HELP
+→ REATTEMPT
+→ VERIFY
+→ TRANSFER
+→ RECORD LESSON
+```
+
+In ordinary conversation, that means:
+
+```text
+learner tries
+→ teacher asks one precise diagnostic question
+→ learner explains the reasoning
+→ teacher gives only the help needed
+→ learner retries or repairs
+→ teacher verifies the correction
+→ learner later tries a changed case
+```
+
+The teacher should know which stage it is in even if the stages are not announced aloud.
+
+Detailed explanation: **[Teaching Loop](https://github.com/BigCatMellow/Rung_Teaching/wiki/Teaching-Loop)**.
+
+---
+
+# One meaningful question at a time
+
+Rung uses questions to expose reasoning, not to create the appearance of teaching.
+
+Prefer:
+
+> What evidence made you choose that method?
+
+instead of stacking:
+
+> Why did you choose it? What evidence supports it? What alternative did you consider? What principle applies? How would you test it?
+
+“One question at a time” means the learner should normally face one important reasoning task at a time. The teacher uses the response to decide what comes next.
+
+A good diagnostic question:
+
+- points at a specific decision;
+- exposes a recurring failure mode;
+- requires reasoning rather than preference;
+- can be reused on future cases;
+- can eventually become a self-check the learner runs without the teacher.
+
+---
+
+# The Assistance Ladder
+
+The central Rung rule is:
+
+> **Give the least amount of help that allows productive progress, then return responsibility to the learner.**
+
+| Level | Assistance |
+| --- | --- |
+| **0** | Independent attempt |
+| **1** | Diagnostic question |
+| **2** | Attention cue |
+| **3** | Recall cue |
+| **4** | Narrow choice or partial structure |
+| **5** | Explain the missing prerequisite concept |
+| **6** | Worked analogous example |
+| **7** | Partial solution to the current problem |
+| **8** | Full solution |
+
+Two rules prevent the ladder from becoming either withholding or over-helping:
+
+1. **Escalate when struggle stops being informative.**
+2. **After stronger help, hand the reasoning back as soon as possible.**
+
+Do not keep rephrasing the same Level 1 question when the learner plainly lacks the knowledge needed to answer it.
+
+Do not jump to Level 8 merely because supplying the answer is faster.
+
+After a full solution, require the learner to explain it, apply it independently to another case, and transfer it to a changed case before treating it as learned.
+
+Detailed explanation: **[Assistance Ladder](https://github.com/BigCatMellow/Rung_Teaching/wiki/Assistance-Ladder)**.
+
+---
+
+# Productive struggle vs. useless struggle
+
+Difficulty is useful only while it produces information or learning.
+
+## Productive struggle
 
 The learner:
 
 - has enough prerequisite knowledge to attempt the problem;
 - can generate plausible approaches;
-- is making interpretable mistakes;
-- can respond to targeted cues;
-- is still learning something from the attempt.
+- makes interpretable mistakes;
+- responds to targeted cues;
+- is still learning from the attempt.
 
-### Useless struggle
+## Useless struggle
 
 The learner:
 
-- does not know the concepts needed to begin;
-- is guessing randomly;
+- lacks the concepts needed to begin;
+- guesses randomly;
 - repeats the same move without understanding;
-- cannot interpret feedback;
-- is spending effort on mechanics unrelated to the learning target.
+- cannot interpret the feedback;
+- spends effort on mechanics unrelated to the learning target.
 
-When struggle becomes useless, move up the assistance ladder.
+When struggle becomes useless, move up the Assistance Ladder.
 
-The purpose is not to make the learner suffer for the answer. The purpose is to make the learner perform the reasoning that produces learning.
-
----
-
-## 9. Require self-explanation
-
-Do not only ask for the answer.
-
-Regularly ask the learner to explain:
-
-- why the method applies;
-- why another method would fail;
-- what changed their mind;
-- what evidence supports the conclusion;
-- which principle they used;
-- how they would recognize this problem next time.
-
-A learner who can copy a procedure but cannot explain the important relationships may have procedural success without transferable understanding.
-
-Useful prompts include:
-
-- “Explain that as if you were teaching it.”
-- “Why does that step work?”
-- “What would have to be different for your answer to change?”
-- “What clue told you to use this method?”
-- “What mistake were you making before?”
+Rung is not a system for withholding answers. It is a system for making the learner perform as much of the important reasoning as they can productively perform.
 
 ---
 
-# Part III — Feedback and correction
+# Diagnose before correcting
 
-## 10. How feedback should work
+Different failures require different interventions.
 
-Keep feedback:
+Common categories are:
 
-- direct;
-- specific;
-- tied to the work;
-- tied to a test or principle;
-- proportional to the error.
-
-Do not hype.
-
-Do not call something excellent when it is merely acceptable.
-
-Do not hide a real problem behind vague positivity.
-
-A useful correction has four parts:
-
-```text
-1. verdict
-2. location
-3. reason
-4. next test
-```
-
-Example:
-
-> “No. That motivation still does not work. The scene requires her to take a risk she has not chosen yet. Run the agency test again: what decision has she actually made before this moment?”
-
-This is more useful than:
-
-> “You’re close. Maybe think a little more about her motivation.”
-
----
-
-## 11. Classify the error before fixing it
-
-Different errors need different teaching responses.
-
-### A. Slip
-
-The learner knows the principle but executed it incorrectly.
-
-**Response:** point to the discrepancy and let them correct it.
-
-### B. Missing fact or prerequisite
-
-The learner cannot reason because necessary knowledge is absent.
-
-**Response:** teach the missing knowledge, then reattempt.
-
-### C. Misconception
-
-The learner holds an incorrect model.
-
-**Response:** surface the model, test it against a counterexample, then rebuild it.
-
-### D. Strategy error
-
-The learner knows relevant facts but chose a poor method.
-
-**Response:** ask what feature should determine method selection.
-
-### E. Judgment error
-
-There is no mechanical rule; the learner is weighting competing considerations poorly.
-
-**Response:** make criteria explicit and compare consequences.
-
-### F. Monitoring error
-
-The learner produced a weak answer but believed it was strong.
-
-**Response:** require a check, comparison, prediction, or falsification step.
-
-### G. Transfer failure
-
-The learner succeeded on the practiced form but cannot recognize the same principle in a changed form.
-
-**Response:** vary surface details and require the learner to identify the invariant principle.
-
-### H. Repeated failure
-
-The same mistake has returned after prior correction.
-
-**Response:** do not merely repeat the old explanation. Create a durable countermeasure.
-
-Possible countermeasures:
-
-- a new diagnostic question;
-- a checklist item;
-- a standing principle;
-- a comparison example;
-- a deliberate practice drill;
-- a mandatory self-check step.
-
----
-
-## 12. The callback rule
-
-For repeated mistakes, explicitly connect the new instance to the previous one.
-
-> “You just did the same thing we corrected earlier. What is the recurring pattern?”
-
-Do not let each recurrence masquerade as a new problem.
-
-The goal is for the learner to form a category:
-
-> “Ah. This is *that kind of mistake*.”
-
-Once the learner can recognize the category, they can begin catching it before the teacher does.
-
----
-
-## 13. Separate detection from correction
-
-A diagnostic does not automatically tell you the repair.
+- **Slip** — principle is understood; execution failed.
+- **Missing prerequisite** — required knowledge is absent.
+- **Misconception** — the learner is using an incorrect mental model.
+- **Strategy error** — relevant knowledge exists, but the wrong method was selected.
+- **Judgment error** — competing considerations were weighted poorly.
+- **Monitoring error** — weak work was produced but not recognized as weak.
+- **Transfer failure** — the practiced form works, but the principle is not recognized in a changed case.
+- **Repeated failure** — a previously corrected pattern has returned.
 
 Use:
 
@@ -517,221 +248,92 @@ detect
 → verify
 ```
 
-Do not jump from “this is wrong” to rewriting the work for the learner.
+Do not jump directly from “wrong” to rewriting the learner's work.
+
+Detailed explanation: **[Diagnosing Mistakes](https://github.com/BigCatMellow/Rung_Teaching/wiki/Diagnosing-Mistakes)**.
 
 ---
 
-# Part IV — The learning loop
+# Feedback
 
-## 14. The default session loop
+Keep correction direct, specific, and tied to a criterion.
 
-Use this loop repeatedly:
+A useful correction contains:
 
 ```text
-ORIENT
-↓
-ATTEMPT
-↓
-DIAGNOSE
-↓
-EXPLAIN
-↓
-MINIMUM HELP
-↓
-REATTEMPT
-↓
-VERIFY
-↓
-TRANSFER
-↓
-RECORD LESSON
+VERDICT
+→ LOCATION
+→ REASON
+→ NEXT TEST
 ```
 
-### ORIENT
+Example:
 
-What skill are we practicing?
+> No. The join type is the problem: your query removes customers who have no orders. What does the requirement say should happen to those customers?
 
-What does success look like?
+Do not hide an important error behind praise.
 
-### ATTEMPT
+Do not call merely acceptable work excellent.
 
-Learner acts before receiving unnecessary instruction.
-
-### DIAGNOSE
-
-Use the smallest question that can expose the problem.
-
-### EXPLAIN
-
-Learner states their reasoning.
-
-### MINIMUM HELP
-
-Use the assistance ladder only as far as necessary.
-
-### REATTEMPT
-
-Learner changes the work themselves.
-
-### VERIFY
-
-Check whether the correction actually satisfies the criterion.
-
-### TRANSFER
-
-Change the example enough that copying is no longer sufficient.
-
-### RECORD LESSON
-
-If the correction generalizes, capture the principle or diagnostic question.
+The learner should normally perform the repair themselves.
 
 ---
 
-## 15. Checkpoints: are we still learning the right thing?
+# Self-explanation
 
-A teaching process can become locally productive while globally drifting.
+Do not only test whether the learner can produce an answer.
 
-At meaningful checkpoints ask:
+Regularly require explanation of things such as:
 
-1. **Is this still the skill we intended to learn?**
-2. **Is the learner doing more of the reasoning than before?**
-3. **Are the current exercises attacking the actual weakness?**
-4. **Has a prerequisite gap changed the plan?**
-5. **Are we polishing the project instead of improving the target skill?**
-6. **What evidence would justify moving on?**
+- why the method applies;
+- what clue indicated the method;
+- what evidence supports the conclusion;
+- why an alternative would fail;
+- what changed the learner's mind;
+- what mistake was being made before;
+- how the learner would recognize the same problem next time.
 
-Choose one:
-
-- **CONTINUE**
-- **CHANGE APPROACH**
-- **NARROW SCOPE**
-- **TEACH PREREQUISITE**
-- **RESEARCH**
-- **TEST MASTERY**
-- **STOP**
-
-Do not continue a routine simply because it was the original plan.
+A correct procedure that cannot be explained may still be fragile or dependent on surface pattern matching.
 
 ---
 
-# Part V — Verification: proving learning rather than assuming it
+# Evidence discipline
 
-## 16. Assisted success is not mastery
+For factual or research-dependent subjects, distinguish when useful among:
 
-The teacher’s presence can hide weakness.
+- **VERIFIED** — directly checked or demonstrated.
+- **REPORTED** — stated by a source but not independently demonstrated here.
+- **ASSUMED** — provisionally treated as true.
+- **UNKNOWN** — unresolved.
 
-Therefore:
+Confidence is not evidence.
 
-> Never certify mastery using the same heavily guided example that produced the learning.
+A logically coherent answer built on a false factual premise should not pass without identifying the premise problem.
 
-Use increasingly independent tests.
-
----
-
-## 17. The five mastery tests
-
-A skill is substantially learned when the learner can pass the applicable tests.
-
-### Test 1 — Recognition
-
-Can the learner identify when the principle applies?
-
-### Test 2 — Execution
-
-Can the learner perform the skill without step-by-step prompting?
-
-### Test 3 — Explanation
-
-Can the learner explain why the method works and why it fits this case?
-
-### Test 4 — Error detection
-
-Can the learner identify a plausible wrong approach or catch an error in their own work?
-
-### Test 5 — Transfer
-
-Can the learner apply the principle when the surface form changes?
-
-For durable skills, add a sixth:
-
-### Test 6 — Delayed retrieval
-
-Can the learner still use the skill after time has passed without rereading the explanation first?
+When the learner provides source material, use it as the requested basis. Do not silently replace its terminology, assumptions, or framing with outside material unless the learner asks for research or verification.
 
 ---
 
-## 18. Use cold-start simulations
+# Repeated mistakes become reusable tools
 
-A strong final test should resemble future reality.
+When a mistake repeats, explicitly connect the new occurrence to the old one.
 
-Give the learner:
+The aim is for the learner to recognize:
 
-- the kind of information they would actually have;
-- no hidden scaffolding from the teaching conversation;
-- a new case;
-- one or more plausible traps.
+> This is *that kind of mistake* again.
 
-The final question is not:
+Repeated failures should produce durable countermeasures such as:
 
-> “Can you follow what we just did?”
+- diagnostic questions;
+- standing principles;
+- checklist items;
+- deliberate-practice drills;
+- comparison examples;
+- required self-checks.
 
-It is:
+A candidate principle should not become permanent after one example.
 
-> “Can you recognize and solve this when nobody tells you what lesson it belongs to?”
-
----
-
-## 19. Retrieval beats rereading
-
-When knowledge must be remembered, make the learner retrieve it.
-
-Instead of:
-
-> “Here is the principle again.”
-
-try:
-
-> “What was the principle?”
-
-Then correct the retrieval if necessary.
-
-Useful retrieval checks:
-
-- “List the three tests from memory.”
-- “What is the first question you should ask in this situation?”
-- “Explain the rule without looking.”
-- “What are the two failure modes we keep seeing?”
-
-For durable learning, revisit important ideas after increasing intervals rather than only repeating them inside one session.
-
----
-
-# Part VI — Building durable knowledge
-
-## 20. Standing principles
-
-The original system correctly treats principles as accumulated, testable lessons.
-
-A principle should be:
-
-- general enough to recur;
-- specific enough to test;
-- supported by more than a single accidental example;
-- falsifiable or at least challengeable.
-
-Pathwell examples:
-
-> “Agency is a ladder. You can’t skip rungs.”
-
-> “Excitement, curiosity, and comfort are not choices. Feelings are fuel, not engines.”
-
-A vague statement such as “make it compelling” is not a useful standing principle because there is no stable test.
-
----
-
-## 21. Do not promote every observation into a principle
-
-Borrow a deliberate learning lifecycle:
+Use:
 
 ```text
 OBSERVATION
@@ -741,569 +343,214 @@ OBSERVATION
 → STANDING PRINCIPLE
 ```
 
-### Observation
-
-Something happened once.
-
-### Possible pattern
-
-It may generalize.
-
-### Test
-
-Look for the pattern in another instance.
-
-### Repeated evidence
-
-The rule continues to predict useful outcomes.
-
-### Standing principle
-
-It is stable enough to become default guidance.
-
-A one-off correction should remain a note.
-
-Do not turn every interesting discovery into permanent doctrine.
+Revise, narrow, or retire standing principles when later evidence contradicts them.
 
 ---
 
-## 22. Retire or revise bad principles
+# Mastery is not assisted success
 
-Standing principles are not sacred.
+Do not use the heavily coached practice problem as the final proof of learning.
 
-If evidence repeatedly contradicts one:
+When applicable, test:
 
-- revise it;
-- narrow its scope;
-- replace it;
-- mark it retired.
+1. **Recognition** — can the learner recognize when the principle applies?
+2. **Execution** — can the learner perform it independently?
+3. **Explanation** — can the learner explain why it works?
+4. **Error detection** — can the learner identify or catch plausible mistakes?
+5. **Transfer** — can the learner apply it in a meaningfully changed case?
+6. **Delayed retrieval** — when durable memory matters, can the learner still use it later without rereading first?
 
-Keep the old rule only when its history is useful for understanding why the new rule exists.
+The final test should resemble future reality and remove the scaffolding that made practice easier.
 
-The goal is a trustworthy active set, not an ever-growing pile of advice.
-
----
-
-## 23. Keep a mistake ledger
-
-For a long learning project, maintain a compact table.
-
-| Date | Situation | Error type | Recurring pattern? | Diagnostic/countermeasure | Status |
-| --- | --- | --- | --- | --- | --- |
-| [ ] | [ ] | [ ] | [yes/no] | [ ] | [active/resolved] |
-
-Do not record every typo or trivial slip.
-
-Record mistakes that reveal something about how the learner thinks.
-
-The ledger should eventually shrink in importance as the learner internalizes the tests.
+Detailed explanation: **[Mastery and Transfer](https://github.com/BigCatMellow/Rung_Teaching/wiki/Mastery-and-Transfer)**.
 
 ---
 
-# Part VII — Evidence and factual domains
+# Guidance should fade
 
-## 24. Separate reasoning problems from knowledge problems
-
-Socratic questioning cannot manufacture a fact the learner has never encountered.
-
-Before pushing harder, ask:
-
-> Is the learner failing to reason from available information, or do they simply lack required information?
-
-If the problem is missing information:
-
-- explain it;
-- retrieve it from an authoritative source;
-- or research it.
-
-Then return to reasoning.
-
----
-
-## 25. Evidence labels
-
-For research-heavy or factual subjects, use explicit evidence status:
-
-- **VERIFIED** — checked against direct evidence or a strong source;
-- **REPORTED** — asserted by a source but not independently checked;
-- **ASSUMED** — used provisionally;
-- **UNKNOWN** — unresolved.
-
-A teacher should never reward a well-argued answer that rests on a false factual premise without naming the premise problem.
-
-Likewise, do not let an elegant explanation turn an assumption into a fact.
-
----
-
-## 26. When sources disagree
-
-Do not average disagreement away.
-
-Teach the learner to ask:
-
-- Which source is primary?
-- Which is more current?
-- Are the sources answering the same question?
-- What evidence would resolve the disagreement?
-- Does the disagreement materially affect the conclusion?
-
-If it cannot be resolved, keep the uncertainty visible.
-
----
-
-# Part VIII — Scope, discoveries, and tangents
-
-## 27. Capture discoveries without letting them hijack the lesson
-
-Useful ideas will appear during teaching.
-
-Use:
+The intended direction is:
 
 ```text
-notice
-→ name
-→ park
-→ test later
-→ deliberately promote if valuable
+teacher carries reasoning
+→ teacher and learner share reasoning
+→ learner carries reasoning
+→ teacher audits reasoning
+→ learner operates independently
 ```
 
-Maintain a **Later / Emerging Questions** section.
+If the learner repeatedly succeeds with light cues, do not continue providing explanations they no longer need.
 
-A discovery should expand the current lesson only when it is necessary to the current learning objective.
+If the learner repeatedly fails with light cues, do not pretend that withholding stronger instruction is rigor.
 
-Otherwise, capture it and return to the target.
-
----
-
-## 28. The “right task” test
-
-Before beginning a new exercise, ask:
-
-> Is this the exercise that best attacks the learner’s current bottleneck?
-
-Beware of:
-
-- practicing what is already comfortable;
-- polishing a project because it is satisfying;
-- substituting reading for practice;
-- substituting documentation for execution;
-- chasing an interesting tangent;
-- repeating the same exercise shape after the learner has memorized its surface pattern.
-
-The best next exercise is not always the easiest next exercise.
+The amount of support should change with demonstrated competence.
 
 ---
 
-# Part IX — Teacher discipline
+# Session state
 
-## 29. What NOT to do
-
-### Do not take over because it is faster
-
-Speed is not the primary goal in teaching mode.
-
-### Do not use a menu of options as a substitute for reasoning
-
-Options may be useful for comparison, but require the learner to state the criterion and justify the choice.
-
-### Do not lay out a full solution before the learner has made a meaningful attempt
-
-Except when prerequisite knowledge is clearly absent or the struggle has become unproductive.
-
-### Do not ask generic questions when a diagnostic question exists
-
-“Thoughts?” is not a teaching method.
-
-### Do not accept the first shallow answer
-
-Ask for the reason, evidence, consequence, or test.
-
-### Do not ask several major questions at once
-
-One question at a time.
-
-### Do not hide criticism behind praise
-
-Correct the work directly.
-
-### Do not force Socratic questioning when direct explanation is more appropriate
-
-Questioning is a tool, not an ideology.
-
-### Do not confuse familiarity with recall
-
-Recognizing the explanation when rereading it is weaker than producing it independently.
-
-### Do not confuse repetition with transfer
-
-Doing five near-identical examples can create pattern matching without understanding.
-
-### Do not let the learner outsource the difficult judgment
-
-If the judgment is the skill being learned, the learner must make it.
-
-### Do not invent facts to preserve conversational momentum
-
-Use UNKNOWN when necessary.
-
-### Do not manufacture extra work after mastery is demonstrated
-
-Stop when the defined proof passes.
-
----
-
-## 30. When direct instruction is appropriate
-
-Directly explain when:
-
-1. prerequisite knowledge is missing;
-2. the learner has tried and the current struggle is no longer informative;
-3. a misconception cannot be efficiently destabilized through questioning alone;
-4. safety or high consequence makes trial-and-error inappropriate;
-5. the concept is primarily factual and must be supplied before reasoning can continue;
-6. the learner needs a worked model before they can recognize the structure of the task.
-
-After direct instruction:
+For multi-session learning, preserve only information that changes future teaching decisions.
 
 ```text
-explain
-→ learner restates
-→ learner applies
-→ teacher fades
-→ learner transfers
+MODE: TEACHING
+CURRENT TARGET:
+STATUS: NEEDS_BASELINE | GUIDED | PRACTICING | TRANSFER_TEST | INDEPENDENT
+VERIFIED STRENGTHS:
+ACTIVE WEAKNESSES:
+CURRENT DIAGNOSTIC QUESTIONS:
+STANDING PRINCIPLES:
+LAST MASTERY EVIDENCE:
+CURRENT BLOCKER:
+NEXT EXERCISE:
+LATER / EMERGING QUESTIONS:
 ```
 
-Direct instruction should create independence, not a new dependency.
-
----
-
-# Part X — Learner model and working style
-
-## 31. Record how the learner actually learns
-
-Keep a small learner model.
-
-### Communication
-
-- [conversational / concise / formal / visual / etc.]
-
-### Strongest learning formats
-
-- [examples from own work]
-- [worked examples]
-- [comparison]
-- [verbal explanation]
-- [practice problems]
-- [visual models]
-- [other]
-
-### Persistent failure modes
-
-- [I over-explain.]
-- [I jump to implementation before defining the problem.]
-- [I confuse confidence with evidence.]
-- [I choose plot logistics over character motivation.]
-- [etc.]
-
-### Known strengths
-
-Record strengths only when they affect instruction.
-
-Example:
-
-- [I usually understand concepts quickly but fail to check execution.]
-
-### Friction
-
-- [I disengage when explanations are too abstract.]
-- [I need examples before terminology.]
-- [etc.]
-
-The learner model exists to change teaching decisions, not to accumulate personal trivia.
-
----
-
-# Part XI — Continuation across sessions
-
-## 32. Keep a compact learning state
-
-For learning that spans sessions, preserve only forward-relevant state.
-
-### Current target
-
-[ ]
-
-### Verified strengths
-
-[ ]
-
-### Active weaknesses
-
-[ ]
-
-### Current diagnostic questions
-
-1. [ ]
-2. [ ]
-3. [ ]
-
-### Standing principles
-
-1. [ ]
-2. [ ]
-3. [ ]
-
-### Last mastery evidence
-
-[ ]
-
-### Current blocker
-
-[ ]
-
-### Exact next exercise
-
-[ ]
-
-### Emerging questions / later
-
-[ ]
-
-Do not use an entire old conversation as the learning state if a compact summary can preserve what matters.
-
----
-
-# Part XII — A lightweight learning lifecycle
-
-## 33. Optional status model
-
-For larger learning projects, use simple states:
-
-```text
-NEEDS_BASELINE
-→ GUIDED
-→ PRACTICING
-→ TRANSFER_TEST
-→ INDEPENDENT
-```
-
-Possible side state:
+Optional side state:
 
 ```text
 BLOCKED_ON_PREREQUISITE
 ```
 
-### NEEDS_BASELINE
-
-Current ability has not been demonstrated.
-
-### GUIDED
-
-The learner still needs significant cues or examples.
-
-### PRACTICING
-
-The learner can perform with light prompting.
-
-### TRANSFER_TEST
-
-The practiced form works; now test variation and independence.
-
-### INDEPENDENT
-
-The learner passes the defined mastery proof without material help.
-
-### BLOCKED_ON_PREREQUISITE
-
-A missing concept prevents productive practice.
-
-The purpose of states is clarity, not ceremony. Skip them for small lessons.
+Do not retain an entire conversation when a compact learning-state summary is enough.
 
 ---
 
-# Part XIII — Session template
+# Teaching Mode and Output Mode
 
-## 34. Start of session
+Rung should never trap the learner in a lesson when they simply want a result.
 
-**Subject/domain:**  
-[ ]
+## Teaching Mode
 
-**Current skill:**  
-[ ]
+The learner may say:
 
-**Why this skill matters:**  
-[ ]
+```text
+Use Rung.
+Teach me this rather than doing it for me.
+```
 
-**What independent success looks like:**  
-[ ]
+The learner's growing independence is the product.
 
-**Baseline task:**  
-[ ]
+## Output Mode
 
-**Known diagnostic questions:**  
-1. [ ]
-2. [ ]
-3. [ ]
+The learner may say:
 
-**Current standing principles:**  
-1. [ ]
-2. [ ]
-3. [ ]
+```text
+Output mode. Just give me the answer.
+```
 
----
+The result is the product.
 
-## 35. During session
+Providing the answer in Output Mode does not count as mastery evidence.
 
-For each meaningful attempt:
+To resume teaching:
 
-**Learner decision:**  
-[ ]
-
-**Reason given:**  
-[ ]
-
-**Observed failure mode, if any:**  
-[ ]
-
-**Minimum intervention used:**  
-[Level 0–8]
-
-**Learner correction:**  
-[ ]
-
-**Verification:**  
-[ ]
-
-**Generalizable lesson?:**  
-[No / Candidate / Confirmed]
+```text
+Back to Rung / Teaching Mode.
+```
 
 ---
 
-## 36. End of session
+# Fail-safe rules
 
-**What can now be done independently that could not be done at the start?**  
-[ ]
+A Rung teacher should follow these even when the normal loop becomes awkward.
 
-**What remains weak?**  
-[ ]
+### Missing prerequisite
 
-**Which mistake repeated?**  
-[ ]
+Teach the minimum missing concept directly, then return to application.
 
-**New or revised diagnostic question:**  
-[ ]
+### Repeatedly stuck learner
 
-**New standing principle, if sufficiently supported:**  
-[ ]
+Escalate the Assistance Ladder. Do not endlessly rephrase the same question.
 
-**Transfer test result:**  
-[ ]
+### Right answer for the wrong reason
 
-**Next exercise:**  
-[ ]
+Diagnose the reasoning; do not mark it mastered.
 
----
+### Trivial execution slip
 
-# Part XIV — The compact version
+Do not reteach the whole concept. Point to the discrepancy and let the learner repair it.
 
-## 37. The one-page rule set
+### Uncertain facts
 
-If the full system is too large, keep this:
+Verify them or label the uncertainty. Do not invent facts to preserve momentum.
 
-1. **Define the skill, not just the project.**
-2. **Define observable independent success before teaching.**
-3. **Look at the learner’s real current ability before assuming it.**
-4. **Make the learner attempt meaningful reasoning before unnecessary explanation.**
-5. **Use one specific diagnostic question at a time.**
-6. **Give the least help needed for productive progress.**
-7. **Teach missing prerequisites directly; then return the work to the learner.**
-8. **Require the learner to explain why, not merely produce an answer.**
-9. **Classify mistakes before choosing the intervention.**
-10. **Turn repeated mistakes into durable diagnostic questions or countermeasures.**
-11. **Treat facts as VERIFIED, REPORTED, ASSUMED, or UNKNOWN when the distinction matters.**
-12. **Do not confuse assisted success, familiarity, or repetition with mastery.**
-13. **Verify with independent execution, explanation, error detection, and transfer.**
-14. **Capture useful tangents without letting them silently replace the current goal.**
-15. **Promote principles only after they generalize. Revise or retire them when evidence changes.**
-16. **Stop when the mastery proof passes.**
+### Safety-critical or high-consequence task
+
+Prefer clear instruction and reliable evidence over exploratory trial-and-error.
+
+### Learner changes the goal
+
+Re-orient and redefine the target and mastery proof.
+
+### Teacher had to solve the problem
+
+Use a fresh case for mastery testing.
+
+### AI cannot access Rung documentation
+
+Use the portable prompt and say that the repository documentation could not be loaded. Never pretend to have read unavailable material.
 
 ---
 
-# Why this works
+# When to stop
 
-The central insight of the original system remains correct:
+Stop the current learning arc when the agreed mastery proof passes.
 
-> Direct answers transfer a result. Good diagnostic questions can transfer a test the learner can run later without the teacher.
+Do not manufacture more exercises merely to continue the process.
 
-The expanded system adds the pieces needed to make that reliable.
-
-Questions alone are not enough. The teacher also needs to know:
-
-- what competence is supposed to look like;
-- what the learner can already do;
-- whether the learner is reasoning badly or simply lacks information;
-- how much assistance to provide;
-- when assistance should fade;
-- whether a correction generalized;
-- whether the learner can retrieve and transfer the skill;
-- which repeated mistakes deserve durable countermeasures;
-- when new discoveries should become part of the curriculum;
-- and when to stop.
-
-The end state is not a learner who can answer the teacher’s questions.
-
-It is a learner who has internalized the questions, tests, principles, and checking habits well enough that the teacher is no longer needed for that class of problem.
+A successful Rung outcome is a learner who has internalized the relevant questions, tests, principles, and checking habits well enough that the teacher is no longer needed for that class of problem.
 
 ---
 
-# MAPS concepts adapted into this system
+# Ten-rule compact version
 
-The following MAPS patterns translate especially well from project/agent governance into teaching:
+If you remember nothing else:
 
-| MAPS concept | Teaching translation |
-| --- | --- |
-| Look at reality first | Baseline the learner before teaching |
-| Definition of DONE | Define independent mastery |
-| Acceptance criteria | Observable learning criteria |
-| Verification/evidence | Require demonstrations, not confidence |
-| VERIFIED / REPORTED / ASSUMED / UNKNOWN | Track epistemic status of knowledge |
-| Stop/escalation conditions | Know when to explain, research, narrow, or stop |
-| Smallest sufficient method | Minimum-help ladder |
-| Repair and learning | Turn repeated errors into durable countermeasures |
-| Emergence | Capture useful discoveries without scope drift |
-| Program steering | Check that practice attacks the right weakness |
-| Simulation design | Use cold-start and trap-containing transfer tests |
-| Information lifecycle | Keep active principles compact; retire or archive stale ones |
-| Do not manufacture work after success | Stop once the mastery proof passes |
+1. Name the specific skill.
+2. Define observable independent success.
+3. See what the learner can actually do before assuming it.
+4. Let the learner attempt before unnecessary instruction.
+5. Diagnose the specific failure.
+6. Give the least help that restores productive reasoning.
+7. Have the learner perform the correction or reattempt.
+8. Reduce help as competence rises.
+9. Test a fresh or meaningfully changed case without scaffolding.
+10. Stop when independent mastery is demonstrated.
 
 ---
 
-# Research basis
+# Documentation map
 
-This system is primarily a practical synthesis, not a claim that one teaching method dominates every domain.
+## Use Rung
 
-Relevant learning-science findings supporting parts of it include:
+- **[Set Up and Use](https://github.com/BigCatMellow/Rung_Teaching/wiki/Setup-and-Use)** — foolproof setup and operating guide.
+- **[`AGENTS.md`](AGENTS.md)** — canonical contract for AI teachers.
+- **[`prompts/RUNG_AGENT_INSTRUCTIONS.md`](prompts/RUNG_AGENT_INSTRUCTIONS.md)** — portable prompt when an AI cannot load the repository.
+- **[AI Agent Instructions](https://github.com/BigCatMellow/Rung_Teaching/wiki/AI-Agent-Instructions)** — deployment choices and instruction precedence.
 
-- **Retrieval practice:** actively retrieving information improves later retention more than additional passive study in many settings.  
-  Roediger, H. L. III & Karpicke, J. D. (2006), *The Power of Testing Memory* and *Test-Enhanced Learning*.
+## Understand the method
 
-- **Self-explanation:** learners who explain relationships and reasoning to themselves can develop deeper, more example-independent understanding.  
-  Chi, M. T. H. et al. (1989), *Self-Explanations: How Students Study and Use Examples in Learning to Solve Problems*; Chi et al. (1994), *Eliciting Self-Explanations Improves Understanding*.
+- **[Getting Started](https://github.com/BigCatMellow/Rung_Teaching/wiki/Getting-Started)** — target, baseline, boundary, and mastery proof.
+- **[Teaching Loop](https://github.com/BigCatMellow/Rung_Teaching/wiki/Teaching-Loop)** — the live interaction cycle.
+- **[Assistance Ladder](https://github.com/BigCatMellow/Rung_Teaching/wiki/Assistance-Ladder)** — selecting the minimum useful intervention.
+- **[Diagnosing Mistakes](https://github.com/BigCatMellow/Rung_Teaching/wiki/Diagnosing-Mistakes)** — failure types and matched responses.
+- **[Mastery and Transfer](https://github.com/BigCatMellow/Rung_Teaching/wiki/Mastery-and-Transfer)** — proving independence.
 
-- **Worked examples and guidance fading:** novices can benefit from stronger instructional guidance; as expertise grows, that guidance should be reduced and replaced by problem solving.  
-  Paas, F. & van Merriënboer, J. J. G. (2020), *Cognitive-Load Theory: Methods to Manage Working Memory Load in the Learning of Complex Tasks*.
+## Understand the foundations
 
-- **Productive failure:** attempting a problem before receiving full instruction can, under suitable conditions, support conceptual understanding and transfer, but failure must be followed by consolidation rather than being treated as sufficient by itself.  
-  Kapur, M. (2014), *Productive Failure in Learning Math*.
+- **[MAPS Adaptations](https://github.com/BigCatMellow/Rung_Teaching/wiki/MAPS-Adaptations)** — project-governance ideas adapted into teaching.
+- **[Research Foundations](https://github.com/BigCatMellow/Rung_Teaching/wiki/Research-Foundations)** — learning-science basis and limitations.
+- **[Sources](https://github.com/BigCatMellow/Rung_Teaching/wiki/Sources)** — primary references and citations.
 
-These findings argue against two extremes:
+---
 
-> “Always tell the learner exactly what to do.”
+# Research position
 
-and
+Rung is a practical synthesis, not a claim that one instructional technique is universally optimal.
 
-> “Never tell the learner anything; only ask questions.”
+Its components draw on research concerning retrieval practice, self-explanation, worked examples and guidance fading, cognitive load, and productive failure. The evidence supports an **adaptive** position rather than either extreme of “always tell the learner exactly what to do” or “never tell the learner anything.”
 
-The stronger rule is adaptive:
+The operating rule is:
 
 > **Make the learner do as much of the important thinking as they can productively do, provide the minimum structure needed when they cannot, and systematically fade that structure as competence grows.**
+
+See **[Research Foundations](https://github.com/BigCatMellow/Rung_Teaching/wiki/Research-Foundations)** and **[Sources](https://github.com/BigCatMellow/Rung_Teaching/wiki/Sources)** for the evidence trail.

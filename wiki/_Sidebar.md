@@ -2,6 +2,7 @@
 
 - [Home](Home)
 - **[Set Up and Use](Setup-and-Use)**
+- [Example: Story Improvement](Example-Story-Session)
 - [AI Agent Instructions](AI-Agent-Instructions)
 - [TeachMe Agent Skill](Agent-Skills)
 - [Getting Started](Getting-Started)

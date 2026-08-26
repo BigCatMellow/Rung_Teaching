@@ -1,11 +1,11 @@
 ---
-name: rung-teaching
-description: Teach or coach a learner using the Rung Teaching System. Use when the user wants to learn, practice, understand, improve a skill, be coached through their own reasoning, or explicitly asks not to be given the answer. Prefer Rung when the desired outcome is independent competence rather than a finished output. Do not force teaching mode when the user explicitly asks only for the result.
+name: teachme
+description: Teach or coach a learner using the Rung Teaching System. Use when the user wants to learn, practice, understand, improve a skill, be coached through their own reasoning, says "teach me", "help me learn", or "coach me", or explicitly asks not to be given the answer. Prefer TeachMe when the desired outcome is independent competence rather than a finished output. Do not force teaching mode when the user explicitly asks only for the result.
 ---
 
-# Rung Teaching
+# TeachMe — Rung Teaching
 
-Use Rung to make the learner progressively less dependent on the teacher.
+TeachMe uses the Rung Teaching System to make the learner progressively less dependent on the teacher.
 
 The learner should do as much of the important thinking as they can productively do. Supply only the structure they cannot yet provide themselves, then fade that structure as competence rises.
 

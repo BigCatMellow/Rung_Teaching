@@ -25,7 +25,7 @@ learner names a broad goal
 The learner does not need to know Rung terminology.
 
 ```text
-/teachme Teach me how to improve my story.
+/teachme improve my story
 [story attached]
 ```
 
@@ -251,7 +251,7 @@ It is not intended for a skill that is already specific enough to test directly.
 For example:
 
 ```text
-/teachme Teach me how to tell whether a character's choice is motivated.
+/teachme how to tell whether a character's choice is motivated.
 ```
 
 should normally proceed directly to a small diagnostic attempt rather than asking the learner to choose an interaction style first.
@@ -261,7 +261,7 @@ should normally proceed directly to a small diagnostic attempt rather than askin
 # The full example in one diagram
 
 ```text
-/teachme Teach me how to improve my story
+/teachme how to improve my story
                  ↓
           story is supplied
                  ↓

@@ -14,30 +14,32 @@ Rung grew from a Socratic teaching method, but it is **not** “only ask questio
 
 ## If TeachMe is installed
 
+**Command syntax:** `/teachme` already means **teach me**. Everything after the command is the topic, skill, goal, or interaction modifier. Do not repeat “teach me” after the command.
+
 The minimum request is simply:
 
 ```text
-/teachme Teach me [what you want to learn].
+/teachme [topic, skill, or goal]
 ```
 
 Examples:
 
 ```text
-/teachme Teach me how to improve my story.
+/teachme improve my story
 ```
 
 ```text
-/teachme Teach me how to write SQL joins without copying examples.
+/teachme SQL joins without copying examples
 ```
 
 ```text
-/teachme Teach me how to evaluate whether a historical claim is well supported.
+/teachme evaluate whether a historical claim is well supported
 ```
 
 You can attach or link the thing you want to work from:
 
 ```text
-/teachme Teach me how to improve my story.
+/teachme improve my story
 [attach or link the story]
 ```
 
@@ -80,7 +82,7 @@ The learner does **not** need to know the Rung terminology, choose an Assistance
 **Learner**
 
 ```text
-/teachme Teach me how to improve my story.
+/teachme improve my story
 [story attached]
 ```
 
@@ -235,7 +237,7 @@ TeachMe supports two starting styles. They are not different teaching systems; b
 Use when the requested skill is already clear.
 
 ```text
-/teachme Teach me how to choose between INNER JOIN and LEFT JOIN.
+/teachme choose between INNER JOIN and LEFT JOIN
 ```
 
 TeachMe should normally start with a small problem and see how the learner currently makes that decision.
@@ -245,7 +247,7 @@ TeachMe should normally start with a small problem and see how the learner curre
 Use when the learner asks for it or when the goal is broad and intent materially changes what should be taught.
 
 ```text
-/teachme Teach me how to improve my story. Interview me first.
+/teachme improve my story --interview
 ```
 
 Interview Mode follows:
@@ -560,7 +562,7 @@ Rung should never trap the learner in a lesson when they simply want a result.
 ## Teaching Mode
 
 ```text
-/teachme Teach me this rather than doing it for me.
+/teachme this rather than doing it for me.
 ```
 
 The learner's growing independence is the product.

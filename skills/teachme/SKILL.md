@@ -25,16 +25,18 @@ A correct answer is not sufficient evidence of learning.
 
 ## Minimum invocation
 
+**Invocation rule:** `/teachme` already supplies the instruction to teach. Treat everything after it as the learner's topic, skill, goal, artifact context, or interaction modifier. Do not require or recommend `/teachme Teach me ...`.
+
 The learner only needs to say what they want to learn:
 
 ```text
-/teachme Teach me [skill or outcome].
+/teachme [topic, skill, or goal]
 ```
 
 They may also attach or link the thing they want to learn from or improve:
 
 ```text
-/teachme Teach me how to improve my story.
+/teachme improve my story
 [attach or link story]
 ```
 
@@ -85,6 +87,12 @@ learner names skill
 Do not ask preference questions that are unnecessary to start the skill.
 
 ### Interview Mode — optional
+
+The learner may select Interview Mode directly with `--interview` or equivalent natural language, for example:
+
+```text
+/teachme improve my story --interview
+```
 
 Use when the learner explicitly asks for it or when a broad, subjective goal has several materially different interpretations, such as:
 

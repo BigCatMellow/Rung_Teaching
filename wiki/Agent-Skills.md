@@ -30,7 +30,7 @@ The user only needs to name what they want to learn.
 For writing:
 
 ```text
-/teachme Teach me how to improve my story.
+/teachme improve my story
 [attach or link story]
 ```
 
@@ -41,7 +41,7 @@ If the goal is already specific enough, it starts with a **Direct Diagnostic**.
 If the goal is broad and subjective, TeachMe can use **Interview Mode**:
 
 ```text
-/teachme Teach me how to improve my story. Interview me first.
+/teachme improve my story --interview
 ```
 
 Interview Mode asks one consequential question at a time. Each next question is chosen from the learner's previous answer until a concrete skill or bottleneck is identified; then the interview stops and the normal Rung loop begins.
@@ -127,13 +127,13 @@ The complete directory is also a generated mirror of the canonical package.
 Invoke it explicitly with:
 
 ```text
-/teachme Teach me how to evaluate the evidence behind a historical claim.
+/teachme how to evaluate the evidence behind a historical claim.
 ```
 
 or:
 
 ```text
-/teachme Teach me how to improve my story. Interview me first.
+/teachme improve my story --interview
 ```
 
 Or ask Claude normally to teach or coach you when automatic skill selection is available.

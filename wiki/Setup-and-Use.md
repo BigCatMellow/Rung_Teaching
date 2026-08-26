@@ -12,16 +12,18 @@ Use the first option that applies.
 
 ## Option A — TeachMe skill is installed
 
+`/teachme` already means **teach me**. Everything after it is the topic, skill, goal, or optional interaction modifier; do not repeat “teach me” after the command.
+
 Use:
 
 ```text
-/teachme Teach me [what you want to learn].
+/teachme [topic, skill, or goal]
 ```
 
 You can attach or link the thing you want to learn from:
 
 ```text
-/teachme Teach me how to improve my story.
+/teachme improve my story
 [attach or link story]
 ```
 
@@ -107,7 +109,7 @@ TeachMe has two starting styles. Both lead into the same Rung teaching loop.
 Use when the skill is already specific enough to test.
 
 ```text
-/teachme Teach me how to choose between INNER JOIN and LEFT JOIN.
+/teachme choose between INNER JOIN and LEFT JOIN
 ```
 
 The teacher should normally begin with a small cold attempt rather than asking a series of preference questions.
@@ -119,15 +121,15 @@ Use when the learner asks for it or when the goal is broad and subjective enough
 Examples:
 
 ```text
-/teachme Teach me how to improve my story. Interview me first.
+/teachme improve my story --interview
 ```
 
 ```text
-/teachme Teach me how to become a better writer.
+/teachme become a better writer
 ```
 
 ```text
-/teachme Teach me how to improve this design.
+/teachme improve this design
 ```
 
 Interview Mode is **not a questionnaire**.
@@ -438,7 +440,7 @@ Rung should not trap the learner in teaching mode.
 Use when the learner wants to develop the skill.
 
 ```text
-/teachme Teach me this rather than doing it for me.
+/teachme this rather than doing it for me.
 ```
 
 ## Output Mode

@@ -23,6 +23,23 @@ teacher carries reasoning
 
 A correct answer is not sufficient evidence of learning.
 
+## Minimum invocation
+
+The learner only needs to say what they want to learn:
+
+```text
+/teachme Teach me [skill or outcome].
+```
+
+They may also attach or link the thing they want to learn from or improve:
+
+```text
+/teachme Teach me how to improve my story.
+[attach or link story]
+```
+
+When source material or an artifact is supplied, read it before diagnosing the learning target. Use the supplied material as the requested basis. Do not silently replace it with a generic example, and do not rewrite the artifact for the learner unless the assistance level or OUTPUT mode calls for that.
+
 ## Load references progressively
 
 Read only the references needed for the current teaching decision:
@@ -42,12 +59,65 @@ When the learner gives a clear skill target:
 
 1. Identify the specific skill being learned.
 2. Reuse relevant context already established; do not ask again for known information.
-3. Define a provisional observable independent-success condition.
-4. Identify only genuinely necessary missing prerequisites or constraints.
-5. Begin with a small cold attempt if the target is clear enough.
-6. Otherwise ask exactly one setup question necessary to begin.
+3. Read any supplied artifact or source material that is part of the learning task.
+4. Define a provisional observable independent-success condition.
+5. Identify only genuinely necessary missing prerequisites or constraints.
+6. Begin with a small cold attempt if the target is clear enough.
+7. Otherwise ask exactly one setup question necessary to begin.
 
 Do not begin with a long lecture or a large intake questionnaire.
+
+## Interaction styles
+
+TeachMe supports two interaction styles. Both still use Rung.
+
+### Direct diagnostic — default
+
+Use when the target is already specific enough to practice.
+
+```text
+learner names skill
+→ teacher gives a small attempt
+→ teacher diagnoses the reasoning
+→ lesson begins
+```
+
+Do not ask preference questions that are unnecessary to start the skill.
+
+### Interview Mode — optional
+
+Use when the learner explicitly asks for it or when a broad, subjective goal has several materially different interpretations, such as:
+
+- improve my story;
+- make my design better;
+- help me become a better writer;
+- improve this presentation;
+- help me reason through my project.
+
+Interview Mode is **not** a questionnaire. Ask one consequential question at a time. Each next question should be chosen from the learner's previous answer.
+
+Use:
+
+```text
+broad goal or artifact
+→ one question about intended outcome
+→ learner answers
+→ next question follows from that answer
+→ teacher identifies a specific skill/bottleneck
+→ teacher states the provisional target
+→ learner attempts or revises
+→ normal Rung loop begins
+```
+
+Stop the interview as soon as there is enough information to define a useful learning target. Do not continue collecting background information for its own sake.
+
+If the broad request could reasonably go either way, the teacher may offer one narrow choice:
+
+```text
+I can either choose the strongest learning target I see in the piece and start there, or interview you one question at a time so the target is based on what you want the piece to accomplish. Which do you want?
+```
+
+A menu must not replace reasoning once teaching begins.
 
 ## Teaching loop
 

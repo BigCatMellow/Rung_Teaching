@@ -1,0 +1,46 @@
+name: Sync Rung Skills
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'skills/rung-teaching/**'
+      - '.github/workflows/sync-rung-skills.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Mirror canonical skill
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          for target in .agents/skills/rung-teaching .claude/skills/rung-teaching; do
+            rm -rf "$target"
+            mkdir -p "$target"
+            cp -a skills/rung-teaching/. "$target/"
+          done
+
+      - name: Commit mirrors when changed
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet -- .agents/skills/rung-teaching .claude/skills/rung-teaching; then
+            echo "Skill mirrors are already current."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .agents/skills/rung-teaching .claude/skills/rung-teaching
+          git commit -m "Sync Rung skill mirrors"
+          git push

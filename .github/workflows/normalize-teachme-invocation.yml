@@ -1,0 +1,118 @@
+name: Normalize TeachMe Invocation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/normalize-teachme-invocation.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Normalize TeachMe syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          git pull --rebase origin main
+
+          python - <<'PY'
+          from pathlib import Path
+
+          # First normalize every human/canonical Markdown example. Generated
+          # Codex/Claude mirrors are updated by the existing sync workflow.
+          for path in Path('.').rglob('*.md'):
+              if '.git' in path.parts or '.agents' in path.parts or '.claude' in path.parts:
+                  continue
+              text = path.read_text(encoding='utf-8')
+              original = text
+
+              text = text.replace('/teachme Teach me ', '/teachme ')
+
+              replacements = {
+                  '/teachme how to improve my story. Interview me first.': '/teachme improve my story --interview',
+                  '/teachme how to improve my story.': '/teachme improve my story',
+                  '/teachme how to become a better writer.': '/teachme become a better writer',
+                  '/teachme how to improve this design.': '/teachme improve this design',
+                  '/teachme how to choose between INNER JOIN and LEFT JOIN.': '/teachme choose between INNER JOIN and LEFT JOIN',
+                  '/teachme how to write SQL joins without copying examples.': '/teachme SQL joins without copying examples',
+                  '/teachme how to evaluate whether a historical claim is well supported.': '/teachme evaluate whether a historical claim is well supported',
+                  '/teachme [what you want to learn].': '/teachme [topic, skill, or goal]',
+                  '/teachme [skill or outcome].': '/teachme [topic, skill, or goal]',
+              }
+              for old, new in replacements.items():
+                  text = text.replace(old, new)
+
+              if text != original:
+                  path.write_text(text, encoding='utf-8')
+
+          def insert_once(path_str, anchor, addition):
+              path = Path(path_str)
+              text = path.read_text(encoding='utf-8')
+              if addition.strip() in text:
+                  return
+              if anchor not in text:
+                  raise SystemExit(f'Expected anchor not found in {path_str}: {anchor!r}')
+              text = text.replace(anchor, anchor + addition, 1)
+              path.write_text(text, encoding='utf-8')
+
+          insert_once(
+              'README.md',
+              '## If TeachMe is installed\n\n',
+              '**Command syntax:** `/teachme` already means **teach me**. Everything after the command is the topic, skill, goal, or interaction modifier. Do not repeat “teach me” after the command.\n\n'
+          )
+
+          insert_once(
+              'skills/teachme/SKILL.md',
+              '## Minimum invocation\n\n',
+              '**Invocation rule:** `/teachme` already supplies the instruction to teach. Treat everything after it as the learner\'s topic, skill, goal, artifact context, or interaction modifier. Do not require or recommend `/teachme Teach me ...`.\n\n'
+          )
+
+          insert_once(
+              'skills/teachme/SKILL.md',
+              '### Interview Mode — optional\n\n',
+              'The learner may select Interview Mode directly with `--interview` or equivalent natural language, for example:\n\n```text\n/teachme improve my story --interview\n```\n\n'
+          )
+
+          insert_once(
+              'skills/teachme/references/setup-and-use.md',
+              '## Minimum learner request\n\n',
+              'When TeachMe is installed as a slash skill, the command itself already carries the teaching intent:\n\n```text\n/teachme [topic, skill, or goal]\n```\n\nDo not require the redundant form `/teachme Teach me ...`. Optional interaction modifiers can follow the goal, for example `/teachme improve my story --interview`.\n\n'
+          )
+
+          insert_once(
+              'wiki/Setup-and-Use.md',
+              '## Option A — TeachMe skill is installed\n\n',
+              '`/teachme` already means **teach me**. Everything after it is the topic, skill, goal, or optional interaction modifier; do not repeat “teach me” after the command.\n\n'
+          )
+          PY
+
+      - name: Commit normalized syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -z "$(git status --porcelain)" ]]; then
+            echo "TeachMe syntax already normalized."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md skills/teachme wiki
+          git commit -m "Make TeachMe slash command intuitive"
+
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            git pull --rebase origin main
+          done
+          exit 1

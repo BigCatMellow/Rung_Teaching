@@ -3,6 +3,7 @@
 - [Home](Home)
 - **[Set Up and Use](Setup-and-Use)**
 - [AI Agent Instructions](AI-Agent-Instructions)
+- [Codex and Claude Skills](Agent-Skills)
 - [Getting Started](Getting-Started)
 - [Teaching Loop](Teaching-Loop)
 - [Assistance Ladder](Assistance-Ladder)
@@ -17,6 +18,7 @@
 
 ---
 
+[Canonical skill](https://github.com/BigCatMellow/Rung_Teaching/tree/main/skills/rung-teaching)  
 [AGENTS.md](https://github.com/BigCatMellow/Rung_Teaching/blob/main/AGENTS.md)  
 [Portable prompt](https://github.com/BigCatMellow/Rung_Teaching/blob/main/prompts/RUNG_AGENT_INSTRUCTIONS.md)  
 [Repository README](https://github.com/BigCatMellow/Rung_Teaching/blob/main/README.md)

@@ -1,6 +1,13 @@
-# Rung as a Codex and Claude Skill
+# TeachMe Agent Skill for Codex and Claude
 
-Rung is packaged as an **Agent Skill** so it can be used as a portable teaching mode instead of requiring the entire Rung repository to govern every agent interaction.
+**TeachMe** is the portable Agent Skill for the **Rung Teaching System**.
+
+The naming distinction is intentional:
+
+- **TeachMe** is the capability the user invokes.
+- **Rung** is the teaching method TeachMe follows.
+
+This lets Rung remain the name of the framework while giving the installed skill a simple user-facing command.
 
 The skill does **not** replace `AGENTS.md`, the README, or this wiki. Those pieces serve different purposes:
 
@@ -9,9 +16,9 @@ The skill does **not** replace `AGENTS.md`, the README, or this wiki. Those piec
 | `README.md` | Human quickstart and system overview |
 | Wiki | Detailed method, research, explanations, and sources |
 | `AGENTS.md` | Persistent Rung operating contract when working inside this repository |
-| `skills/rung-teaching/` | Canonical portable Agent Skill |
-| `.agents/skills/rung-teaching/` | Codex-compatible mirror |
-| `.claude/skills/rung-teaching/` | Claude-compatible mirror |
+| `skills/teachme/` | Canonical portable TeachMe Agent Skill |
+| `.agents/skills/teachme/` | Codex-compatible mirror |
+| `.claude/skills/teachme/` | Claude-compatible mirror |
 | `prompts/RUNG_AGENT_INSTRUCTIONS.md` | Fallback when Skills/repository instructions are unavailable |
 
 ---
@@ -21,7 +28,7 @@ The skill does **not** replace `AGENTS.md`, the README, or this wiki. Those piec
 The only skill package that should be edited directly is:
 
 ```text
-skills/rung-teaching/
+skills/teachme/
 ├── SKILL.md
 └── references/
     ├── setup-and-use.md
@@ -34,51 +41,57 @@ skills/rung-teaching/
 
 `SKILL.md` contains the stable runtime behavior. The reference files provide progressive detail only when the current teaching decision needs it.
 
-This keeps the skill compact enough for discovery while preserving the detailed Rung behavior required for reliable teaching.
+This keeps TeachMe compact enough for discovery while preserving the detailed Rung behavior required for reliable teaching.
 
 ---
 
 # Codex
 
-The repository exposes the skill to Codex at:
+The repository exposes TeachMe to Codex at:
 
 ```text
-.agents/skills/rung-teaching/
+.agents/skills/teachme/
 ```
 
 The complete directory is a generated mirror of the canonical package.
 
-To use Rung explicitly, ask Codex to use the `rung-teaching` skill while teaching a subject or skill, for example:
+To invoke it explicitly:
 
 ```text
-Use the rung-teaching skill to teach me how to diagnose weak SQL joins.
+Use the teachme skill to teach me how to diagnose weak SQL joins.
 ```
 
-The skill description is also written so teaching/coaching requests can be recognized as appropriate triggers when skill discovery is available.
+Or more simply:
+
+```text
+Teach me SQL joins using TeachMe.
+```
+
+The skill description is written so learning/coaching requests can also be recognized as appropriate triggers when skill discovery is available.
 
 ---
 
 # Claude
 
-The repository exposes the skill to Claude at:
+The repository exposes TeachMe to Claude at:
 
 ```text
-.claude/skills/rung-teaching/
+.claude/skills/teachme/
 ```
 
 The complete directory is also a generated mirror of the canonical package.
 
-Use it explicitly with the Rung skill when needed, for example:
+Invoke it explicitly with:
 
 ```text
-/rung-teaching Teach me how to evaluate the evidence behind a historical claim.
+/teachme Teach me how to evaluate the evidence behind a historical claim.
 ```
 
-Or ask Claude normally to teach/coach you when automatic skill selection is available.
+Or ask Claude normally to teach or coach you when automatic skill selection is available.
 
 ---
 
-# Installing Rung in another project
+# Installing TeachMe in another project
 
 You do not need to copy the entire Rung_Teaching repository.
 
@@ -87,7 +100,7 @@ You do not need to copy the entire Rung_Teaching repository.
 Copy the canonical package into the target project as:
 
 ```text
-.agents/skills/rung-teaching/
+.agents/skills/teachme/
 ```
 
 ## For Claude
@@ -95,7 +108,7 @@ Copy the canonical package into the target project as:
 Copy the canonical package into the target project as:
 
 ```text
-.claude/skills/rung-teaching/
+.claude/skills/teachme/
 ```
 
 If a project uses both systems, install the same canonical package in both locations.
@@ -117,25 +130,25 @@ The GitHub Action:
 copies:
 
 ```text
-skills/rung-teaching/
+skills/teachme/
 ```
 
 into both:
 
 ```text
-.agents/skills/rung-teaching/
-.claude/skills/rung-teaching/
+.agents/skills/teachme/
+.claude/skills/teachme/
 ```
 
 whenever the canonical package changes on `main`.
 
-This means there is one runtime source of truth rather than three versions that can drift apart.
+The workflow also removes the former generated `rung-teaching` mirror paths. This keeps one runtime source of truth instead of parallel skill names that can drift apart.
 
 ---
 
 # Why the skill uses references
 
-The skill follows the same minimum-help idea that Rung itself uses: load only the detail required for the current decision.
+TeachMe follows the same minimum-help idea that Rung itself uses: load only the detail required for the current decision.
 
 ```text
 starting a learning arc
@@ -161,11 +174,11 @@ The agent should not load every reference on every turn.
 
 ---
 
-# When to use the skill versus AGENTS.md
+# When to use TeachMe versus AGENTS.md
 
 Use **`AGENTS.md`** when Rung should be persistent behavior throughout work in a repository or project.
 
-Use the **Rung skill** when teaching mode should be a portable capability that can be activated only when the user wants to learn or practice something.
+Use **TeachMe** when teaching mode should be a portable capability activated only when the user wants to learn or practice something.
 
 They can coexist. In this repository they intentionally do.
 
@@ -173,7 +186,16 @@ They can coexist. In this repository they intentionally do.
 
 # Trigger boundary
 
-Rung should activate when the user wants learning, coaching, guided practice, skill development, or says not to simply provide the answer.
+TeachMe should activate when the user wants learning, coaching, guided practice, skill development, or says not to simply provide the answer.
+
+Examples include:
+
+```text
+Teach me how this works.
+Help me learn this instead of doing it for me.
+Coach me through this.
+Use TeachMe.
+```
 
 It should **not** force teaching mode when the user explicitly wants only a finished output.
 

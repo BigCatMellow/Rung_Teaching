@@ -34,7 +34,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          if git diff --quiet -- .agents/skills/rung-teaching .claude/skills/rung-teaching; then
+          if [[ -z "$(git status --porcelain -- .agents/skills/rung-teaching .claude/skills/rung-teaching)" ]]; then
             echo "Skill mirrors are already current."
             exit 0
           fi

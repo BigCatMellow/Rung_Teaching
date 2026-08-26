@@ -1,6 +1,7 @@
 ## Rung Teaching
 
 - [Home](Home)
+- **[Set Up and Use](Setup-and-Use)**
 - [AI Agent Instructions](AI-Agent-Instructions)
 - [Getting Started](Getting-Started)
 - [Teaching Loop](Teaching-Loop)

@@ -13,13 +13,56 @@ The skill does **not** replace `AGENTS.md`, the README, or this wiki. Those piec
 
 | Component | Role |
 | --- | --- |
-| `README.md` | Human quickstart and system overview |
-| Wiki | Detailed method, research, explanations, and sources |
+| `README.md` | Human quickstart, complete example, and system overview |
+| Wiki | Detailed method, examples, research, explanations, and sources |
 | `AGENTS.md` | Persistent Rung operating contract when working inside this repository |
 | `skills/teachme/` | Canonical portable TeachMe Agent Skill |
 | `.agents/skills/teachme/` | Codex-compatible mirror |
 | `.claude/skills/teachme/` | Claude-compatible mirror |
 | `prompts/RUNG_AGENT_INSTRUCTIONS.md` | Fallback when Skills/repository instructions are unavailable |
+
+---
+
+# What using TeachMe looks like
+
+The user only needs to name what they want to learn.
+
+For writing:
+
+```text
+/teachme Teach me how to improve my story.
+[attach or link story]
+```
+
+TeachMe reads the supplied work before choosing the learning target.
+
+If the goal is already specific enough, it starts with a **Direct Diagnostic**.
+
+If the goal is broad and subjective, TeachMe can use **Interview Mode**:
+
+```text
+/teachme Teach me how to improve my story. Interview me first.
+```
+
+Interview Mode asks one consequential question at a time. Each next question is chosen from the learner's previous answer until a concrete skill or bottleneck is identified; then the interview stops and the normal Rung loop begins.
+
+Example shape:
+
+```text
+story supplied
+→ “What do you want the reader to feel here?”
+→ learner answers
+→ next question follows from that answer
+→ specific writing weakness becomes visible
+→ define the skill
+→ learner attempts
+→ diagnose
+→ minimum help
+→ reattempt
+→ transfer
+```
+
+See **[[Example: Story Improvement|Example-Story-Session]]** for the complete conversation.
 
 ---
 
@@ -61,10 +104,10 @@ To invoke it explicitly:
 Use the teachme skill to teach me how to diagnose weak SQL joins.
 ```
 
-Or more simply:
+Or:
 
 ```text
-Teach me SQL joins using TeachMe.
+Teach me how to improve my story using TeachMe.
 ```
 
 The skill description is written so learning/coaching requests can also be recognized as appropriate triggers when skill discovery is available.
@@ -85,6 +128,12 @@ Invoke it explicitly with:
 
 ```text
 /teachme Teach me how to evaluate the evidence behind a historical claim.
+```
+
+or:
+
+```text
+/teachme Teach me how to improve my story. Interview me first.
 ```
 
 Or ask Claude normally to teach or coach you when automatic skill selection is available.
@@ -113,7 +162,7 @@ Copy the canonical package into the target project as:
 
 If a project uses both systems, install the same canonical package in both locations.
 
-The package is self-contained for normal runtime behavior. The main Rung wiki remains useful when a human or agent needs deeper explanation, the learning-science basis, MAPS adaptations, or source citations.
+The package is self-contained for normal runtime behavior. The main Rung wiki remains useful when a human or agent needs deeper explanation, examples, the learning-science basis, MAPS adaptations, or source citations.
 
 ---
 
@@ -207,4 +256,4 @@ TEACHING MODE
 OUTPUT MODE
 ```
 
-See [[Set Up and Use]] and [[AI Agent Instructions]] for the full behavior contract.
+See [[Set Up and Use]], [[Example: Story Improvement|Example-Story-Session]], and [[AI Agent Instructions]] for the full behavior contract.

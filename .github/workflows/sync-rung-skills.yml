@@ -41,12 +41,9 @@ jobs:
         run: |
           set -euo pipefail
 
-          PATHS=(
-            .agents/skills/teachme
-            .claude/skills/teachme
-            .agents/skills/rung-teaching
-            .claude/skills/rung-teaching
-          )
+          # Stage from the parent skill directories so deleted legacy paths are
+          # included without passing nonexistent paths directly to git add.
+          PATHS=(.agents/skills .claude/skills)
 
           if [[ -z "$(git status --porcelain -- "${PATHS[@]}")" ]]; then
             echo "Skill mirrors are already current."

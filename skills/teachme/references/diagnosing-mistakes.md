@@ -2,18 +2,66 @@
 
 Classify a meaningful error before choosing the intervention.
 
-## Error classes
+## A. Slip
 
-- **Slip** — principle is understood; execution failed. Point to the discrepancy and let the learner repair it.
-- **Missing prerequisite** — necessary knowledge is absent. Supply or teach the minimum missing concept, then return to application.
-- **Misconception** — an incorrect model is driving the answer. Surface it, test it, rebuild it, and apply the revised model.
-- **Strategy error** — relevant knowledge exists but the wrong method was selected. Ask what feature should determine method choice.
-- **Judgment error** — competing considerations were weighted poorly. Make criteria and consequences explicit.
-- **Monitoring/self-checking error** — weak work was produced but not recognized as weak. Require an observable check.
-- **Transfer failure** — practiced form succeeds but changed form fails. Vary surface details and identify the invariant.
-- **Repeated failure** — a previously corrected pattern returns. Connect the recurrence and create a durable countermeasure.
+The learner knows the principle but executed it incorrectly.
+
+**Response:** point to the discrepancy and let the learner correct it.
+
+## B. Missing prerequisite
+
+Necessary knowledge is absent.
+
+**Response:** supply or research the missing information, then return to application.
+
+## C. Misconception
+
+The learner holds an incorrect model.
+
+**Response:** surface the model, test it against evidence or a counterexample, then rebuild it.
+
+## D. Strategy error
+
+Relevant knowledge exists, but the learner selected a poor method.
+
+**Response:** ask what feature of the problem should determine method selection.
+
+## E. Judgment error
+
+There is no simple mechanical rule and the learner is weighting competing considerations poorly.
+
+**Response:** make the criteria explicit and compare consequences without making the judgment for them unless assistance must be escalated.
+
+## F. Monitoring/self-checking error
+
+The learner produced a weak or incorrect result but believed it was strong.
+
+**Response:** require a check, comparison, prediction, falsification step, or other observable audit.
+
+## G. Transfer failure
+
+The learner succeeded on the practiced form but cannot recognize the same principle in a changed form.
+
+**Response:** vary surface details and make the learner identify the invariant structure.
+
+## H. Repeated failure
+
+The same meaningful error returns after prior correction.
+
+**Response:** connect it explicitly to the previous occurrence and create a durable countermeasure.
+
+Possible countermeasures:
+
+- diagnostic question;
+- standing principle;
+- checklist item;
+- deliberate-practice drill;
+- comparison example;
+- mandatory self-check.
 
 ## Correction sequence
+
+Use:
 
 ```text
 detect
@@ -26,23 +74,27 @@ detect
 
 Do not jump directly from “wrong” to rewriting the learner's work.
 
-A right answer for the wrong reason is still a learning problem. A wrong answer produced by sound reasoning may instead be a factual premise, transcription, calculation, or missing-information problem.
+## Right answer, wrong reason
+
+Treat this as a learning problem. A correct result produced by faulty reasoning is not verified competence. Diagnose the reasoning rather than rewarding the outcome alone.
+
+## Wrong answer, sound reasoning
+
+Check whether a factual premise, transcription error, calculation slip, or missing information caused the failure. Do not unnecessarily reteach the reasoning if the reasoning itself is sound.
 
 ## Repeated error callback
 
-Use an explicit callback:
+Use an explicit callback such as:
 
 ```text
 This is the same kind of failure we saw earlier. What is the recurring pattern?
 ```
 
-The goal is for the learner eventually to recognize the category before the teacher does.
+The goal is for the learner to recognize the category before the teacher does.
 
 ## Mistake Regression Bank
 
-When a meaningful error is repeated, sticky, or consequential enough to matter later, preserve the **failure shape** as a future cold check.
-
-Record:
+When a meaningful error is repeated, sticky, or consequential enough to matter later, preserve its **failure shape** for a future cold check.
 
 ```text
 PATTERN:
@@ -56,11 +108,11 @@ LAST COLD RESULT:
 
 Rules:
 
-1. Change the surface example; test the pattern, not memorization.
-2. Do not announce which old lesson applies.
-3. Use normal tools/references.
-4. Record material teacher assistance; a cue is not an independent catch.
-5. Do not freeze every one-off slip.
-6. Retire cases that no longer represent a meaningful weakness.
+- change the surface example so the learner cannot copy the old repair;
+- do not announce which old lesson applies;
+- use normal tools and references;
+- record material teacher assistance;
+- do not freeze every one-off slip;
+- retire cases that no longer represent a meaningful weakness.
 
-A later unannounced reappearance is useful because it tests recognition and self-checking, not merely whether the learner remembers the teacher's wording.
+The goal is eventually for the learner to recognize and prevent the pattern before the teacher points it out.

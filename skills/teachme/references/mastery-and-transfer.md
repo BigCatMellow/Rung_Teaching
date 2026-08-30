@@ -4,24 +4,62 @@ Do not certify mastery from the same heavily guided example used during teaching
 
 ## Core mastery tests
 
-Use the dimensions that fit the skill:
+Use the tests that fit the skill:
 
-- **Recognition** — can the learner identify when the principle applies without being told which lesson is relevant?
-- **Execution** — can they perform the skill without step-by-step prompting?
-- **Explanation** — can they explain why the method works and fits this case?
-- **Error detection** — can they catch an important error or diagnose a plausible wrong approach?
-- **Transfer** — can they apply the same principle when the surface form changes?
-- **Delayed retrieval** — when durable memory matters, can they still use it later without rereading the prior explanation?
+### Recognition
+
+Can the learner identify when the principle or method applies without being told which lesson is relevant?
+
+### Execution
+
+Can the learner perform the skill without step-by-step prompting?
+
+### Explanation
+
+Can the learner explain why the method works and why it fits this case?
+
+### Error detection
+
+Can the learner catch an important error in their own work or diagnose a plausible wrong approach?
+
+### Transfer
+
+Can the learner apply the same underlying principle when the surface form changes?
+
+### Delayed retrieval
+
+For durable skills, can the learner still use the skill after time has passed without rereading the explanation first?
 
 ## Final mastery proof
 
-A strong final test should use realistic starting information, remove teaching-conversation scaffolding, use a fresh or meaningfully changed case, include plausible traps when useful, and have an observable criterion defined before judging the result.
+A strong final test should resemble future reality:
+
+- realistic information;
+- no hidden scaffold from the teaching conversation;
+- a fresh or meaningfully changed case;
+- one or more plausible traps when appropriate;
+- an observable pass/fail criterion defined before judging the result.
 
 The key question is:
 
 ```text
 Can the learner recognize and solve this when nobody tells them what lesson it belongs to?
 ```
+
+## Transfer variation
+
+Change one or more of:
+
+- surface wording;
+- context;
+- irrelevant details;
+- order of information;
+- apparent similarity;
+- competing method;
+- missing information;
+- plausible distractor.
+
+Do not make transfer so different that it tests an unrelated prerequisite instead of the target skill.
 
 ## Mastery Evidence Record
 
@@ -44,18 +82,30 @@ LIMITATIONS / NEXT PROOF:
 
 Rules:
 
-- Guided success is practice evidence, not independent mastery evidence.
-- If the teacher supplied the decisive reasoning, the case cannot prove independence.
-- A correct answer for the wrong reason does not pass the relevant reasoning criterion.
-- `NOT TESTED` is better than invented evidence.
-- An `INDEPENDENT` status should point to the fresh case that justified it.
-- Later contradictory evidence may reopen a previously passed skill.
+- guided success is practice evidence, not independent mastery evidence;
+- if the teacher supplied the decisive reasoning, the case cannot prove independence;
+- a correct answer for the wrong reason does not pass the relevant reasoning criterion;
+- `NOT TESTED` is better than invented evidence;
+- an `INDEPENDENT` status should point to the fresh case that justified it;
+- later contradictory evidence may reopen a passed skill.
 
 Not every small lesson needs a formal record. Use it when future teaching decisions will rely on the mastery claim.
 
 ## After a failed mastery test
 
-Diagnose the failed dimension rather than resetting everything. Return to the lowest Assistance Ladder rung that addresses the observed weakness, then test again with a different case.
+Do not reset the learner to the beginning automatically.
+
+Diagnose the failure:
+
+- recognition failure;
+- execution failure;
+- explanation failure;
+- monitoring failure;
+- transfer failure;
+- forgotten prerequisite;
+- misleading or poorly designed test.
+
+Return to the lowest Assistance Ladder rung that addresses the observed weakness, then test again with a different case.
 
 ## Stop condition
 

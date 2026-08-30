@@ -15,6 +15,19 @@ Rung is deliberately not “Socratic questioning all the time.” Questions are 
 
 Start with **[[Set Up and Use the Rung Teacher|Setup-and-Use]]**.
 
+That page tells you:
+
+- which prompt to use;
+- how to configure an AI agent;
+- what the learner needs to provide;
+- exactly what the teacher should do on the first turn;
+- how to run the loop;
+- how to use the Assistance Ladder;
+- what state to preserve across sessions;
+- when to switch to Output Mode;
+- how to handle common failure cases;
+- how to know when the learner is actually independent.
+
 If the AI can already read this repository, the short invocation is:
 
 ```text
@@ -53,18 +66,18 @@ RECORD THE LESSON
 
 The goal is not merely for the learner to reach the right answer. The goal is for them to internalize the questions, tests, principles, and checking habits that produced it.
 
-For a broad goal spanning several dependent skills or sessions, Rung adds a **[[Learning Arc|Learning-Arcs]]** around that loop:
+For goals that span several dependent skills or sessions, Rung adds a **[[Learning Arc|Learning-Arcs]]** around the normal loop:
 
 ```text
 inspect baseline
 → define final independent proof
 → map required capabilities backward
 → teach the current bottleneck with Rung
-→ re-check the trajectory from evidence
+→ re-check the roadmap from evidence
 → adapt until the final proof passes
 ```
 
-The learning arc controls the route; the normal Rung loop still does the teaching.
+The arc controls the longer route; the core Rung loop still does the teaching.
 
 ---
 
@@ -100,11 +113,11 @@ This is related to the learning-science idea of **guidance fading**: novices oft
 ## Run the method
 
 3. **[[Getting Started]]** — define target, mastery proof, baseline, and boundary.
-4. **[[Learning Arcs]]** — manage multi-skill or multi-session learning toward a final proof.
-5. **[[Teaching Loop]]** — live interaction cycle for the current skill.
+4. **[[Learning Arcs]]** — manage a multi-skill or multi-session goal toward a final independent proof.
+5. **[[Teaching Loop]]** — live interaction cycle.
 6. **[[Assistance Ladder]]** — decide how much help to give.
-7. **[[Diagnosing Mistakes]]** — classify failures and preserve recurring failure patterns.
-8. **[[Mastery and Transfer]]** — determine whether learning actually transferred and record the evidence behind consequential mastery claims.
+7. **[[Diagnosing Mistakes]]** — classify failures before correcting them and cold-test recurring failure patterns.
+8. **[[Mastery and Transfer]]** — determine whether learning actually transferred and preserve evidence behind consequential mastery claims.
 
 ## Understand why it is designed this way
 
@@ -124,7 +137,7 @@ Rung separates three kinds of statements:
 
 These categories should not be blurred. A useful design rule is not automatically a scientific law, and a research finding does not automatically dictate one universal teaching procedure.
 
-The new learning-arc, mastery-evidence, and mistake-regression controls are MAPS-derived Rung design choices. They should be tested in practice and revised when evidence shows they are not helping.
+The learning-arc, mastery-evidence, and mistake-regression controls are MAPS-derived Rung design choices. They should be tested in practice rather than presented as established learning-science findings.
 
 ---
 

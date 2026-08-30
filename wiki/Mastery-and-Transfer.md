@@ -4,120 +4,61 @@ The most important verification rule in Rung is:
 
 > **Assisted success is not mastery.**
 
-A learner can reach the correct answer while relying on prompts, hints, examples, or the teacher's framing. That proves the teaching interaction succeeded at producing an answer. It does not yet prove the learner can reproduce the reasoning independently.
+A learner can reach the correct answer while relying on prompts, hints, examples, or the teacher's framing. That proves the interaction produced an answer. It does not yet prove the learner can reproduce the reasoning independently.
 
 ## Why the practiced example is not enough
 
-Instruction changes the environment around the problem.
+Instruction changes the environment around the problem. The learner may know which concept is being tested, which diagnostic question the teacher expects, what kind of answer was just corrected, or which worked example the task resembles.
 
-The learner may know:
-
-- which concept is being tested;
-- which diagnostic question the teacher expects;
-- what kind of answer was recently praised or corrected;
-- which worked example the current problem resembles.
-
-Those cues can disappear in real use.
-
-Therefore, final verification should use a fresh case with substantially less scaffolding.
-
-## The mastery tests
-
-### Test 1 — Recognition
-
-Can the learner identify when the principle applies?
-
-The teacher should not announce the relevant lesson beforehand.
-
-**Pass example:** the learner notices that a scene's problem is missing agency and invokes the agency test on their own.
-
-**Fail example:** the learner can answer the agency question correctly only after the teacher asks it.
+Those cues can disappear in real use. Final verification should therefore use a fresh case with substantially less scaffolding.
 
 ---
 
-### Test 2 — Execution
+# The mastery tests
 
-Can the learner perform the skill without step-by-step prompting?
+Use the dimensions that fit the skill.
 
-Execution may include using normal tools or references that would exist in real life. Independence does not mean memorizing everything; it means not depending on the teacher to supply the important reasoning.
+## 1. Recognition
 
----
+Can the learner identify when the principle applies without being told which lesson is relevant?
 
-### Test 3 — Explanation
+## 2. Execution
 
-Can the learner explain:
+Can the learner perform the skill without step-by-step prompting, using the normal tools or references they would have in real life?
 
-- why the method applies;
-- why it works;
-- which evidence matters;
-- why a plausible alternative is weaker?
+## 3. Explanation
 
-Self-explanation research supports asking learners to articulate relationships rather than merely reproduce a procedure. See [Research Foundations](Research-Foundations).
+Can the learner explain why the method applies, why it works, which evidence matters, and why a plausible alternative is weaker?
 
----
+## 4. Error detection
 
-### Test 4 — Error detection
+Can the learner catch an important mistake in their own work or diagnose a plausible wrong approach?
 
-Can the learner catch an important mistake?
+## 5. Transfer
 
-This can be tested by:
+Can the learner apply the principle when the surface form changes enough that copying the practiced procedure is insufficient?
 
-- placing a plausible error in an example;
-- asking the learner to critique their own result;
-- asking what evidence would falsify the answer;
-- asking for a test or check before accepting the work.
+Possible variations include a different context, reordered information, distracting details, a competing plausible method, or incomplete information.
 
-This measures whether the learner has acquired the **checking habit**, not merely the production habit.
+## 6. Delayed retrieval
+
+When durable memory matters, can the learner still retrieve and use the relevant principle or diagnostic after time has passed without rereading the prior lesson first?
+
+Retrieval-practice research supports the broader value of retrieving information for later retention in many settings. See [Research Foundations](Research-Foundations).
 
 ---
 
-### Test 5 — Transfer
+# Cold-start mastery simulation
 
-Can the learner apply the principle when the surface form changes?
+For consequential or complex skills, give the learner:
 
-Change enough that copying the practiced procedure mechanically is insufficient.
-
-Possible variations:
-
-- different context;
-- reordered information;
-- distracting details;
-- a different apparent problem type;
-- a competing method that looks plausible;
-- incomplete information requiring the learner to identify what is missing.
-
-The learner should identify the underlying structure rather than the familiar appearance.
-
----
-
-### Test 6 — Delayed retrieval
-
-For knowledge that must remain available over time, test it after a delay.
-
-Do not begin by showing the previous notes.
-
-Ask the learner to retrieve:
-
-- the principle;
-- the diagnostic question;
-- the method-selection clue;
-- the important failure modes.
-
-Retrieval-practice research shows that retrieving information can improve later retention more than additional passive study in many experimental settings. See Roediger & Karpicke (2006) on [Research Foundations](Research-Foundations).
-
-## Cold-start simulation
-
-For consequential or complex skills, design a final exercise that resembles future reality.
-
-Give the learner:
-
-1. only the information they would realistically possess;
-2. a new problem;
+1. only information they would realistically possess;
+2. a fresh problem;
 3. no explicit label telling them which lesson applies;
-4. at least one plausible trap when useful;
-5. normal tools or references they would actually have access to.
+4. a plausible trap when useful;
+5. normal tools and references.
 
-Then observe:
+Observe:
 
 ```text
 recognition
@@ -127,9 +68,50 @@ recognition
 → explanation
 ```
 
-MAPS uses controlled simulations to test whether an agent can navigate a workflow from realistic starting material rather than merely produce a plausible answer. Rung adapts that idea to learner independence. See [`SIMULATION_DESIGN.md`](https://github.com/BigCatMellow/MAPS_Lean/blob/main/playbook/SIMULATION_DESIGN.md).
+Do not make transfer so different that it silently tests an unrelated prerequisite rather than the intended skill.
 
-## Suggested status model
+---
+
+# Mastery Evidence Record
+
+For a meaningful skill in a longer learning arc, preserve the evidence behind the status rather than only the status label.
+
+Use the smallest useful record:
+
+```text
+SKILL:
+STATUS: NEEDS_BASELINE | GUIDED | PRACTICING | TRANSFER_TEST | INDEPENDENT
+CASE / TASK:
+ASSISTANCE USED: highest material Assistance Ladder level
+
+RECOGNITION: PASS | FAIL | NOT TESTED
+EXECUTION: PASS | FAIL | NOT TESTED
+EXPLANATION: PASS | FAIL | NOT TESTED
+ERROR DETECTION: PASS | FAIL | NOT TESTED
+TRANSFER: PASS | FAIL | NOT TESTED
+DELAYED RETRIEVAL: PASS | FAIL | NOT TESTED
+
+VERDICT:
+LIMITATIONS / NEXT PROOF:
+```
+
+Not every small lesson needs a formal record. Use it when future teaching decisions will rely on a mastery claim.
+
+## Evidence rules
+
+- A guided success is **practice evidence**, not independent mastery evidence.
+- Record material assistance. If the teacher supplied the decisive reasoning, the case cannot prove independence.
+- A correct answer for the wrong reason does not pass the relevant reasoning criterion.
+- A failed dimension narrows the next teaching target; it does not automatically reset the whole skill.
+- A status such as `INDEPENDENT` should point to the fresh case that justified it.
+- `NOT TESTED` is preferable to pretending evidence exists.
+- Later contradictory evidence can reopen a previously passed skill.
+
+This adapts MAPS_Lean's rule that consequential status claims should be backed by inspectable evidence rather than unsupported summaries. It is a Rung system design choice, not a claim that this exact record format is validated by learning research.
+
+---
+
+# Suggested status model
 
 For larger learning projects:
 
@@ -147,38 +129,22 @@ Possible side state:
 BLOCKED_ON_PREREQUISITE
 ```
 
-### NEEDS_BASELINE
+Use states only when they make a longer learning arc clearer. They are not required for a small lesson.
 
-Current ability has not been demonstrated.
+---
 
-### GUIDED
+# After a failed mastery test
 
-The learner still needs substantial cues, explanation, or worked examples.
+Do not reset the learner to the beginning automatically.
 
-### PRACTICING
+Diagnose whether the failure is primarily recognition, execution, explanation, monitoring, transfer, forgotten prerequisite, or a badly designed test. Return to the lowest Assistance Ladder rung that addresses the observed weakness, then use a different case for the next mastery test.
 
-The learner succeeds with light prompting and is beginning to self-correct.
+---
 
-### TRANSFER_TEST
-
-The practiced form works; now reduce scaffolding and vary the problem.
-
-### INDEPENDENT
-
-The defined mastery proof passes without material teacher help.
-
-### BLOCKED_ON_PREREQUISITE
-
-A missing concept prevents meaningful practice of the current target.
-
-Use these states only when they make a longer learning arc clearer. They are not required for a small lesson.
-
-## When to stop
-
-Do not manufacture more exercises simply because teaching can continue indefinitely.
+# When to stop
 
 Stop a learning arc when the defined proof passes at the level of independence required by the learner's real goal.
 
-This adapts a MAPS negative operating rule: stop when acceptance criteria and required verification are complete rather than creating extra work after success. See [`AGENTS.md`](https://github.com/BigCatMellow/MAPS_Lean/blob/main/AGENTS.md).
+Do not manufacture more exercises simply because teaching can continue indefinitely.
 
-Mastery is always relative to the target. Someone can be independent at one level while still having much more to learn in the broader field.
+Mastery is relative to the target. Someone can be independent at one level while still having much more to learn in the broader field.

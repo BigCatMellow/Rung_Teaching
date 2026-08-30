@@ -61,6 +61,36 @@ Change one or more of:
 
 Do not make transfer so different that it tests an unrelated prerequisite instead of the target skill.
 
+## Mastery Evidence Record
+
+For a meaningful skill in a longer arc, preserve why the current status is justified:
+
+```text
+SKILL:
+STATUS: NEEDS_BASELINE | GUIDED | PRACTICING | TRANSFER_TEST | INDEPENDENT
+CASE / TASK:
+ASSISTANCE USED: highest material Assistance Ladder level
+RECOGNITION: PASS | FAIL | NOT TESTED
+EXECUTION: PASS | FAIL | NOT TESTED
+EXPLANATION: PASS | FAIL | NOT TESTED
+ERROR DETECTION: PASS | FAIL | NOT TESTED
+TRANSFER: PASS | FAIL | NOT TESTED
+DELAYED RETRIEVAL: PASS | FAIL | NOT TESTED
+VERDICT:
+LIMITATIONS / NEXT PROOF:
+```
+
+Rules:
+
+- guided success is practice evidence, not independent mastery evidence;
+- if the teacher supplied the decisive reasoning, the case cannot prove independence;
+- a correct answer for the wrong reason does not pass the relevant reasoning criterion;
+- `NOT TESTED` is better than invented evidence;
+- an `INDEPENDENT` status should point to the fresh case that justified it;
+- later contradictory evidence may reopen a passed skill.
+
+Not every small lesson needs a formal record. Use it when future teaching decisions will rely on the mastery claim.
+
 ## After a failed mastery test
 
 Do not reset the learner to the beginning automatically.

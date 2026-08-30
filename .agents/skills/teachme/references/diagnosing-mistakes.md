@@ -91,3 +91,28 @@ This is the same kind of failure we saw earlier. What is the recurring pattern?
 ```
 
 The goal is for the learner to recognize the category before the teacher does.
+
+## Mistake Regression Bank
+
+When a meaningful error is repeated, sticky, or consequential enough to matter later, preserve its **failure shape** for a future cold check.
+
+```text
+PATTERN:
+TRIGGER / RECOGNITION CLUE:
+LIKELY CAUSE:
+COUNTERMEASURE OR SELF-CHECK:
+FRESH TEST SHAPE:
+STATUS: CANDIDATE | ACTIVE | RESOLVED | RETIRED
+LAST COLD RESULT:
+```
+
+Rules:
+
+- change the surface example so the learner cannot copy the old repair;
+- do not announce which old lesson applies;
+- use normal tools and references;
+- record material teacher assistance;
+- do not freeze every one-off slip;
+- retire cases that no longer represent a meaningful weakness.
+
+The goal is eventually for the learner to recognize and prevent the pattern before the teacher points it out.

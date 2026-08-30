@@ -47,6 +47,7 @@ When source material or an artifact is supplied, read it before diagnosing the l
 Read only the references needed for the current teaching decision:
 
 - Starting a learning arc or configuring Rung → `references/setup-and-use.md`
+- Managing a multi-skill or multi-session goal → `references/learning-arcs.md`
 - Running the normal interaction cycle → `references/teaching-loop.md`
 - Deciding how much help to give → `references/assistance-ladder.md`
 - Understanding a learner error → `references/diagnosing-mistakes.md`
@@ -127,6 +128,39 @@ I can either choose the strongest learning target I see in the piece and start t
 
 A menu must not replace reasoning once teaching begins.
 
+## Learning Arc control
+
+For a goal that spans multiple dependent skills, sessions, or consequential mastery claims, load `references/learning-arcs.md` and add a long-horizon control layer around the normal Rung loop.
+
+Use:
+
+```text
+inspect actual performance
+→ define observable independent DONE
+→ map required capabilities backward
+→ challenge the weakest roadmap assumption once
+→ choose the first meaningful bottleneck
+→ execute forward with Rung
+→ adapt from evidence
+```
+
+Keep distant phases broad and the current phase concrete. The capability map is provisional; demonstrated learner evidence outranks the original sequence.
+
+At natural arc boundaries, run a trajectory check:
+
+```text
+re-check evidence
+→ name what changed
+→ compare roadmap with final proof
+→ choose action
+→ update canonical state
+→ continue
+```
+
+Possible actions are `CONTINUE`, `REPRIORITIZE`, `INSERT PREREQUISITE`, `CUT`, `RESEARCH`, `REDESIGN PRACTICE`, `TEST MASTERY`, and `STOP`.
+
+Do not formalize a small one-off lesson merely because the mechanism exists.
+
 ## Teaching loop
 
 Use:
@@ -199,6 +233,14 @@ Do not automatically repair the learner's work yourself.
 
 When an error repeats, connect it explicitly to the earlier occurrence and create a durable countermeasure such as a diagnostic question, standing principle, checklist item, deliberate-practice drill, or self-check.
 
+### Mistake Regression Bank
+
+When a meaningful error is repeated, sticky, or consequential enough to matter later, preserve its **failure shape** for an unannounced future check. Use `references/diagnosing-mistakes.md` for the full record.
+
+At minimum preserve the pattern, recognition clue, likely cause, countermeasure/self-check, a changed future test shape, status, and last cold result.
+
+Do not preserve every trivial slip. In the later check, do not announce which old lesson applies and do not count a teacher cue as an independent catch.
+
 ## Feedback
 
 Be direct, specific, and tied to a criterion.
@@ -240,6 +282,12 @@ When applicable, test:
 
 Do not use the heavily coached practice example as the final mastery proof.
 
+### Mastery Evidence Record
+
+For a consequential skill status in a longer learning arc, preserve the evidence behind the status. Use `references/mastery-and-transfer.md` for the compact record.
+
+Record the case, material assistance used, applicable mastery dimensions, verdict, and remaining limitation. Guided success is practice evidence rather than independent mastery evidence. `NOT TESTED` is preferable to invented proof, and an `INDEPENDENT` status should point to the fresh case that justified it.
+
 Stop when the agreed mastery proof passes. Do not manufacture extra exercises merely to continue teaching.
 
 ## Mode control
@@ -257,7 +305,7 @@ If they later ask to learn the skill, return to TEACHING mode and re-establish t
 
 Keep the current learning target distinct from useful tangents and out-of-scope material.
 
-At meaningful checkpoints ask internally:
+At meaningful **skill-level** checkpoints ask internally:
 
 - Are we still learning the intended skill?
 - Is the learner doing more of the reasoning than before?
@@ -267,6 +315,14 @@ At meaningful checkpoints ask internally:
 - What evidence would justify moving on?
 
 Choose deliberately among `CONTINUE`, `CHANGE APPROACH`, `NARROW SCOPE`, `TEACH PREREQUISITE`, `RESEARCH`, `TEST MASTERY`, and `STOP`.
+
+For a roadmap-level question in a longer arc, run the Learning Trajectory Check instead of repeatedly patching local exercises around a stale plan.
+
+## Canonical continuation state
+
+For multi-session learning, preserve one canonical current state rather than parallel per-session progress summaries. Old attempts and transcripts are evidence/history.
+
+For a Learning Arc, the current state may additionally carry the arc goal, final independent proof, current phase, provisional capability map, mastery evidence, active regression cases, prerequisite blockers, and exact next exercise. Load `references/session-state.md` when continuation matters.
 
 ## High-consequence domains
 

@@ -66,6 +66,19 @@ RECORD THE LESSON
 
 The goal is not merely for the learner to reach the right answer. The goal is for them to internalize the questions, tests, principles, and checking habits that produced it.
 
+For goals that span several dependent skills or sessions, Rung adds a **[[Learning Arc|Learning-Arcs]]** around the normal loop:
+
+```text
+inspect baseline
+→ define final independent proof
+→ map required capabilities backward
+→ teach the current bottleneck with Rung
+→ re-check the roadmap from evidence
+→ adapt until the final proof passes
+```
+
+The arc controls the longer route; the core Rung loop still does the teaching.
+
 ---
 
 # Why “Rung”?
@@ -100,16 +113,17 @@ This is related to the learning-science idea of **guidance fading**: novices oft
 ## Run the method
 
 3. **[[Getting Started]]** — define target, mastery proof, baseline, and boundary.
-4. **[[Teaching Loop]]** — live interaction cycle.
-5. **[[Assistance Ladder]]** — decide how much help to give.
-6. **[[Diagnosing Mistakes]]** — classify failures before correcting them.
-7. **[[Mastery and Transfer]]** — determine whether learning actually transferred.
+4. **[[Learning Arcs]]** — manage a multi-skill or multi-session goal toward a final independent proof.
+5. **[[Teaching Loop]]** — live interaction cycle.
+6. **[[Assistance Ladder]]** — decide how much help to give.
+7. **[[Diagnosing Mistakes]]** — classify failures before correcting them and cold-test recurring failure patterns.
+8. **[[Mastery and Transfer]]** — determine whether learning actually transferred and preserve evidence behind consequential mastery claims.
 
 ## Understand why it is designed this way
 
-8. **[[MAPS Adaptations]]** — MAPS_Lean concepts translated into teaching.
-9. **[[Research Foundations]]** — learning-science basis and limitations.
-10. **[[Sources]]** — primary links and citations.
+9. **[[MAPS Adaptations]]** — MAPS_Lean concepts translated into teaching.
+10. **[[Research Foundations]]** — learning-science basis and limitations.
+11. **[[Sources]]** — primary links and citations.
 
 ---
 
@@ -123,11 +137,13 @@ Rung separates three kinds of statements:
 
 These categories should not be blurred. A useful design rule is not automatically a scientific law, and a research finding does not automatically dictate one universal teaching procedure.
 
+The learning-arc, mastery-evidence, and mistake-regression controls are MAPS-derived Rung design choices. They should be tested in practice rather than presented as established learning-science findings.
+
 ---
 
 # The shortest usable version
 
-If you remember only six things:
+If you remember only seven things:
 
 1. Define what the learner should eventually do **without help**.
 2. See what they can actually do before teaching them.
@@ -135,6 +151,7 @@ If you remember only six things:
 4. Give the least help needed for productive progress.
 5. Make the learner explain, correct, and reapply the idea themselves.
 6. Do not call it learned until it transfers to a fresh problem.
+7. For a long learning arc, let demonstrated evidence change the roadmap.
 
 The repository README provides the compact system overview:
 

@@ -185,6 +185,55 @@ Do not record every trivial slip.
 
 The ledger is for mistakes that reveal something stable about how the learner approaches problems.
 
+## Mistake Regression Bank
+
+When a meaningful mistake is repeated, sticky, or consequential enough to matter later, preserve the **failure shape** as a future cold check rather than only recording prose about the incident.
+
+Use:
+
+```text
+meaningful failure
+→ diagnose cause
+→ correct and verify
+→ confirm recurring/sticky pattern
+→ record regression case
+→ later cold reappearance
+→ did the learner recognize and prevent it independently?
+```
+
+A compact regression case records:
+
+```text
+PATTERN:
+TRIGGER / RECOGNITION CLUE:
+LIKELY CAUSE:
+COUNTERMEASURE OR SELF-CHECK:
+FRESH TEST SHAPE:
+STATUS: CANDIDATE | ACTIVE | RESOLVED | RETIRED
+LAST COLD RESULT:
+```
+
+Rules:
+
+1. **Test the pattern, not the memorized example.** Change the surface form.
+2. **Do not announce which prior lesson applies.** Recognition is part of the test.
+3. **Use normal tools and references.** Independence does not mean artificial memorization.
+4. **Record material teacher assistance.** A cue is not an independent catch.
+5. **Do not freeze every one-off slip.** The bank is for patterns worth checking again.
+6. **Retire stale cases.** If a case no longer represents a meaningful weakness, remove it from active teaching state.
+
+Example:
+
+```text
+PATTERN: chooses an index-based loop when the task only needs each item
+TRIGGER: reaches for positions instead of asking whether position matters
+COUNTERMEASURE: "Do I need the index, or only the value?"
+FRESH TEST SHAPE: unfamiliar collection-processing problem with no need for indexes
+STATUS: ACTIVE
+```
+
+A later changed case tests whether the learner now recognizes the pattern without being led back to the old lesson. This extends the MAPS repair adaptation with the idea of freezing important real failures as regression checks. The exact teaching form is a Rung design choice, not a validated educational protocol.
+
 ## When a mistake becomes a principle
 
 Do not generalize from one incident too quickly.

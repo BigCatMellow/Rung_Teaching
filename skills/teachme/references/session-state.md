@@ -4,6 +4,8 @@ Use this reference when Rung teaching spans multiple sessions or when a compact 
 
 Preserve only forward-relevant learning state.
 
+Keep **one canonical current state**. Old session transcripts and summaries are evidence/history, not parallel current truth.
+
 ```text
 MODE: TEACHING | OUTPUT
 SUBJECT/DOMAIN:
@@ -41,12 +43,26 @@ USEFUL BUT LATER:
 - ...
 ```
 
+For a multi-skill Learning Arc, extend the same state rather than creating another tracker:
+
+```text
+ARC GOAL:
+FINAL INDEPENDENT PROOF:
+CURRENT PHASE:
+CAPABILITY MAP / ROADMAP:
+MASTERY EVIDENCE:
+ACTIVE REGRESSION CASES:
+PREREQUISITE BLOCKERS:
+```
+
 ## State rules
 
 - Record demonstrated strengths as VERIFIED; do not promote self-report to verified competence without evidence.
 - Keep diagnostic questions that are still useful for future self-checking.
 - Treat new reusable lessons as candidates before promoting them to standing principles.
 - Retire or revise standing principles when evidence contradicts them.
+- Carry only active regression cases that can affect future teaching; retire stale ones.
+- Update the Learning Arc roadmap when trajectory evidence changes the useful route to the final proof.
 - Do not keep trivial slips or personal trivia unless they materially change teaching decisions.
 - Prefer this compact state over replaying an entire old conversation.
 

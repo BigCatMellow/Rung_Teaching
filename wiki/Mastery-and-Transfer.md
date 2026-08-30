@@ -129,6 +129,42 @@ recognition
 
 MAPS uses controlled simulations to test whether an agent can navigate a workflow from realistic starting material rather than merely produce a plausible answer. Rung adapts that idea to learner independence. See [`SIMULATION_DESIGN.md`](https://github.com/BigCatMellow/MAPS_Lean/blob/main/playbook/SIMULATION_DESIGN.md).
 
+## Mastery Evidence Record
+
+For a meaningful skill in a longer learning arc, preserve the evidence behind the status rather than only the status label.
+
+Use the smallest useful record:
+
+```text
+SKILL:
+STATUS: NEEDS_BASELINE | GUIDED | PRACTICING | TRANSFER_TEST | INDEPENDENT
+CASE / TASK:
+ASSISTANCE USED: highest material Assistance Ladder level
+
+RECOGNITION: PASS | FAIL | NOT TESTED
+EXECUTION: PASS | FAIL | NOT TESTED
+EXPLANATION: PASS | FAIL | NOT TESTED
+ERROR DETECTION: PASS | FAIL | NOT TESTED
+TRANSFER: PASS | FAIL | NOT TESTED
+DELAYED RETRIEVAL: PASS | FAIL | NOT TESTED
+
+VERDICT:
+LIMITATIONS / NEXT PROOF:
+```
+
+Not every small lesson needs a formal record. Use it when future teaching decisions will rely on the mastery claim.
+
+Evidence rules:
+
+- guided success is **practice evidence**, not independent mastery evidence;
+- if the teacher supplied the decisive reasoning, the case cannot prove independence;
+- a correct answer for the wrong reason does not pass the relevant reasoning criterion;
+- `NOT TESTED` is preferable to pretending evidence exists;
+- an `INDEPENDENT` status should point to the fresh case that justified it;
+- later contradictory evidence can reopen a previously passed skill.
+
+This adapts MAPS_Lean's rule that consequential status claims should be backed by inspectable evidence rather than unsupported summaries. The record format itself is a Rung design choice, not a validated educational protocol.
+
 ## Suggested status model
 
 For larger learning projects:

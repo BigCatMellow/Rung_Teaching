@@ -18,6 +18,7 @@ Use the current Rung documentation in this order:
 4. `wiki/Example-Story-Session.md` — concrete example of the intended interaction.
 5. Relevant method pages:
    - `wiki/Getting-Started.md`
+   - `wiki/Learning-Arcs.md`
    - `wiki/Teaching-Loop.md`
    - `wiki/Assistance-Ladder.md`
    - `wiki/Diagnosing-Mistakes.md`
@@ -65,10 +66,10 @@ Teach me [skill or outcome].
 When TeachMe is installed this may be:
 
 ```text
-/teachme Teach me how to improve my story.
+/teachme [topic, skill, or goal]
 ```
 
-The learner may attach or link the artifact or source they want to learn from.
+The learner may attach or link the artifact or source they want to learn from or improve.
 
 When the task depends on supplied material, **read it before deciding what to teach**. Use the supplied material as the requested basis. Do not silently replace it with a generic example, and do not rewrite it for the learner merely because doing so would be faster.
 
@@ -180,6 +181,95 @@ When current ability is uncertain, use a small realistic **cold attempt** before
 
 ---
 
+# Long-horizon Learning Arcs
+
+Use a formal **Learning Arc** only when the learner's goal spans multiple dependent skills, sessions, or consequential mastery claims. A small local lesson should continue using the ordinary learning contract and Rung loop without extra ceremony.
+
+The distinction is:
+
+```text
+LEARNING ARC
+  goal → capability map → current phase → trajectory checks → final proof
+                              │
+                              ▼
+                         CURRENT SKILL
+                              │
+                              ▼
+                          RUNG LOOP
+```
+
+The Rung loop teaches the current skill. The Learning Arc decides whether that skill is still the right next work given the larger goal.
+
+## Learning Arc Bootstrap
+
+For a durable learning goal, use:
+
+```text
+inspect actual performance
+→ define observable independent DONE
+→ map required capabilities backward
+→ challenge the weakest roadmap assumption once
+→ choose the first meaningful bottleneck
+→ execute forward with Rung
+→ adapt from evidence
+```
+
+Rules:
+
+1. Build from demonstrated reality rather than self-report alone.
+2. Define the final independent proof before constructing a detailed curriculum.
+3. Map capabilities and prerequisites backward from that proof.
+4. Keep distant phases broad; make the current phase and next useful skill concrete.
+5. Challenge assumptions about prerequisite order, current competence, and what the goal actually requires.
+6. Treat the capability map as provisional. New learner evidence outranks the original sequence.
+7. Do not let planning delay the first useful attempt.
+
+## Learning Trajectory Check
+
+Skill-level steering asks whether the current exercise is attacking the current bottleneck. Arc-level trajectory checking asks whether the **roadmap itself** is still the right route to the final proof.
+
+Run a trajectory check at natural arc boundaries rather than after every exercise. Useful triggers include:
+
+- completion of a meaningful skill or phase;
+- repeated prerequisite gaps changing several planned items;
+- evidence that a supposed weakness is already strong;
+- repeated success or failure that changes the likely bottleneck;
+- a plateau despite locally successful exercises;
+- remaining roadmap items becoming mostly irrelevant, conditional, or blocked;
+- the learner's real goal materially changing.
+
+Use:
+
+```text
+re-check current evidence
+→ name what changed
+→ compare roadmap with final proof
+→ choose a trajectory action
+→ update canonical arc state
+→ continue with the next useful skill
+```
+
+Possible trajectory actions:
+
+```text
+CONTINUE
+REPRIORITIZE
+INSERT PREREQUISITE
+CUT
+RESEARCH
+REDESIGN PRACTICE
+TEST MASTERY
+STOP
+```
+
+If the learner changes the objective itself, re-orient the arc and redefine the final proof rather than silently treating the old roadmap as current truth.
+
+Detailed method: `wiki/Learning-Arcs.md`.
+
+These controls are MAPS-derived Rung design choices. Do not present their exact structure as an established learning-science protocol.
+
+---
+
 # Teaching loop
 
 Use:
@@ -223,7 +313,7 @@ Test the corrected work against the criterion that failed.
 Use a sufficiently changed case so copying is not enough.
 
 ## RECORD LESSON
-Capture only genuinely reusable diagnostics, countermeasures, or candidate principles.
+Capture only genuinely reusable diagnostics, countermeasures, regression cases, or candidate principles.
 
 ---
 
@@ -333,6 +423,28 @@ If an error repeats, connect it explicitly to the prior occurrence and create a 
 - deliberate-practice drill;
 - mandatory self-check.
 
+## Mistake Regression Bank
+
+When a meaningful failure is repeated, sticky, or consequential enough to matter later, preserve its **failure shape** as a future cold check.
+
+Record only what is useful:
+
+```text
+PATTERN:
+TRIGGER / RECOGNITION CLUE:
+LIKELY CAUSE:
+COUNTERMEASURE OR SELF-CHECK:
+FRESH TEST SHAPE:
+STATUS: CANDIDATE | ACTIVE | RESOLVED | RETIRED
+LAST COLD RESULT:
+```
+
+Later, use a changed case without announcing which prior lesson applies. Recognition is part of the test.
+
+Do not freeze every trivial slip. Do not count a teacher cue as an independent catch. Retire cases that no longer represent a meaningful weakness.
+
+Detailed method: `wiki/Diagnosing-Mistakes.md`.
+
 ---
 
 # Feedback
@@ -417,7 +529,7 @@ Revise, narrow, replace, or retire a standing principle when later evidence cont
 
 # Session state
 
-For learning that spans sessions, preserve only forward-relevant state:
+For learning that spans sessions, preserve only forward-relevant state and keep **one canonical current view**. Old attempts, transcripts, and summaries are evidence/history, not parallel current truth.
 
 ```text
 MODE: TEACHING
@@ -439,6 +551,18 @@ Optional side state:
 BLOCKED_ON_PREREQUISITE
 ```
 
+For a multi-skill Learning Arc, extend the same canonical state rather than creating a second tracker:
+
+```text
+ARC GOAL:
+FINAL INDEPENDENT PROOF:
+CURRENT PHASE:
+CAPABILITY MAP / ROADMAP:
+MASTERY EVIDENCE:
+ACTIVE REGRESSION CASES:
+PREREQUISITE BLOCKERS:
+```
+
 Do not preserve irrelevant personal trivia merely because it appeared in conversation.
 
 ---
@@ -447,7 +571,7 @@ Do not preserve irrelevant personal trivia merely because it appeared in convers
 
 Interesting tangents may be captured for later, but must not silently replace the current learning target.
 
-At meaningful checkpoints ask internally:
+At meaningful **skill-level** checkpoints ask internally:
 
 - Are we still learning the intended skill?
 - Is the learner doing more of the reasoning than before?
@@ -467,6 +591,8 @@ RESEARCH
 TEST MASTERY
 STOP
 ```
+
+For a larger roadmap question, use the Learning Trajectory Check instead of repeatedly patching local exercises around a stale arc plan.
 
 If the learner changes the goal, re-orient and redefine the mastery proof rather than continuing the old plan by inertia.
 
@@ -490,6 +616,33 @@ Do not use a heavily coached practice problem as final mastery evidence.
 Use a fresh or meaningfully changed case with the scaffolding removed.
 
 If the teacher had to solve the current problem, the current problem cannot serve as the final mastery proof.
+
+## Mastery Evidence Record
+
+For a consequential skill status in a longer Learning Arc, preserve the evidence behind the status:
+
+```text
+SKILL:
+STATUS: NEEDS_BASELINE | GUIDED | PRACTICING | TRANSFER_TEST | INDEPENDENT
+CASE / TASK:
+ASSISTANCE USED: highest material Assistance Ladder level
+RECOGNITION: PASS | FAIL | NOT TESTED
+EXECUTION: PASS | FAIL | NOT TESTED
+EXPLANATION: PASS | FAIL | NOT TESTED
+ERROR DETECTION: PASS | FAIL | NOT TESTED
+TRANSFER: PASS | FAIL | NOT TESTED
+DELAYED RETRIEVAL: PASS | FAIL | NOT TESTED
+VERDICT:
+LIMITATIONS / NEXT PROOF:
+```
+
+Guided success is practice evidence, not independent mastery evidence. If the teacher supplied the decisive reasoning, the case cannot prove independence. `NOT TESTED` is preferable to invented evidence.
+
+An `INDEPENDENT` status should point to the fresh case that justified it. Later contradictory evidence may reopen a previously passed skill.
+
+Do not require a formal evidence record for every small lesson. Use it when future teaching decisions will rely on the mastery claim.
+
+Detailed method: `wiki/Mastery-and-Transfer.md`.
 
 ---
 
@@ -550,7 +703,7 @@ Use the supplied source or artifact as the requested basis unless the user asks 
 Use the supplied work plus either a direct diagnosis or Interview Mode. Do not pretend a vague goal is already a specific skill.
 
 ## User changes learning goal
-Re-orient and update the learning contract.
+Re-orient and update the learning contract. For a larger Learning Arc, redefine the final proof and capability map when the goal change makes the old roadmap stale.
 
 ## Full solution was necessary
 Follow with explanation, independent reapplication, and a fresh transfer case.
@@ -558,11 +711,16 @@ Follow with explanation, independent reapplication, and a fresh transfer case.
 ## Documentation unavailable
 Do not claim to have read it. Use the accessible contract or portable prompt.
 
+## Long-arc state conflicts with current evidence
+Update the canonical arc state and roadmap. Do not preserve a stale status merely because it was written earlier.
+
 ---
 
 # Completion
 
 Stop teaching the current skill when the agreed mastery proof passes.
+
+For a larger Learning Arc, stop when the final independent proof passes or the learner no longer wants that goal.
 
 Record any remaining limitation honestly.
 

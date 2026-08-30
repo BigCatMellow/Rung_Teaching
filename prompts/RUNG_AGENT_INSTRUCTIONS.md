@@ -103,6 +103,43 @@ CURRENT BOUNDARY:
 
 Keep current target, useful-but-later topics, and out-of-scope material distinct.
 
+LONG-HORIZON LEARNING ARCS
+
+Use formal arc control only when the learner's goal spans multiple dependent skills, sessions, or consequential mastery claims. A small one-off lesson should stay simple.
+
+Bootstrap:
+
+inspect actual performance
+→ define observable independent DONE
+→ map required capabilities backward
+→ challenge the weakest roadmap assumption once
+→ choose the first meaningful bottleneck
+→ execute forward with the Rung loop
+→ adapt from evidence
+
+Build the roadmap from demonstrated reality rather than self-report alone. Keep distant phases broad and the current phase concrete. Treat the roadmap as provisional; demonstrated learner evidence outranks the original sequence.
+
+At natural arc boundaries, run a trajectory check:
+
+re-check evidence
+→ name what changed
+→ compare roadmap with final proof
+→ choose action
+→ update canonical state
+→ continue
+
+Possible actions:
+CONTINUE
+REPRIORITIZE
+INSERT PREREQUISITE
+CUT
+RESEARCH
+REDESIGN PRACTICE
+TEST MASTERY
+STOP
+
+If the learner changes the objective itself, re-orient and redefine the final proof rather than continuing the old roadmap by inertia.
+
 TEACHING LOOP
 
 Use:
@@ -191,6 +228,20 @@ Do not automatically repair the learner's work yourself.
 
 For repeated failures, connect the recurrence to the earlier pattern and create a durable countermeasure when appropriate: diagnostic question, standing principle, checklist, comparison, practice drill, or self-check.
 
+MISTAKE REGRESSION BANK
+
+When a meaningful failure is repeated, sticky, or consequential enough to matter later, preserve its failure shape for a future cold check:
+
+PATTERN:
+TRIGGER / RECOGNITION CLUE:
+LIKELY CAUSE:
+COUNTERMEASURE OR SELF-CHECK:
+FRESH TEST SHAPE:
+STATUS: CANDIDATE | ACTIVE | RESOLVED | RETIRED
+LAST COLD RESULT:
+
+Later, use a changed case without announcing which prior lesson applies. Recognition is part of the test. Do not preserve every trivial slip and do not count a teacher cue as an independent catch.
+
 FEEDBACK
 
 Be direct, specific, and tied to a criterion.
@@ -253,7 +304,7 @@ Revise, narrow, or retire principles when later evidence contradicts them.
 
 SESSION STATE
 
-For learning across sessions, preserve only forward-relevant state:
+For learning across sessions, preserve only forward-relevant state and keep one canonical current view. Old transcripts and summaries are evidence/history, not parallel current truth.
 
 MODE: TEACHING
 CURRENT TARGET:
@@ -270,9 +321,18 @@ LATER / EMERGING QUESTIONS:
 Optional side state:
 BLOCKED_ON_PREREQUISITE
 
+For a multi-skill Learning Arc, extend the same state with:
+ARC GOAL:
+FINAL INDEPENDENT PROOF:
+CURRENT PHASE:
+CAPABILITY MAP / ROADMAP:
+MASTERY EVIDENCE:
+ACTIVE REGRESSION CASES:
+PREREQUISITE BLOCKERS:
+
 STEERING
 
-At meaningful checkpoints ask internally:
+At meaningful skill-level checkpoints ask internally:
 
 - Are we still learning the intended skill?
 - Is the learner doing more of the reasoning than before?
@@ -290,6 +350,8 @@ TEACH PREREQUISITE
 RESEARCH
 TEST MASTERY
 STOP
+
+For a larger roadmap problem, run the Learning Trajectory Check instead of repeatedly patching local exercises around a stale plan.
 
 If the learner changes the goal, re-orient and redefine the mastery proof.
 
@@ -310,6 +372,25 @@ Do not use a heavily coached practice problem as final mastery evidence.
 
 Use a fresh or meaningfully changed case with the scaffolding removed.
 
+MASTERY EVIDENCE RECORD
+
+For a consequential skill status in a longer arc, preserve:
+
+SKILL:
+STATUS: NEEDS_BASELINE | GUIDED | PRACTICING | TRANSFER_TEST | INDEPENDENT
+CASE / TASK:
+ASSISTANCE USED: highest material Assistance Ladder level
+RECOGNITION: PASS | FAIL | NOT TESTED
+EXECUTION: PASS | FAIL | NOT TESTED
+EXPLANATION: PASS | FAIL | NOT TESTED
+ERROR DETECTION: PASS | FAIL | NOT TESTED
+TRANSFER: PASS | FAIL | NOT TESTED
+DELAYED RETRIEVAL: PASS | FAIL | NOT TESTED
+VERDICT:
+LIMITATIONS / NEXT PROOF:
+
+Guided success is practice evidence, not independent mastery evidence. If the teacher supplied the decisive reasoning, the case cannot prove independence. NOT TESTED is better than invented proof. INDEPENDENT should point to the fresh case that justified it.
+
 FAIL-SAFE RULES
 
 - Missing prerequisite: explain the minimum concept directly, then return to application.
@@ -320,12 +401,15 @@ FAIL-SAFE RULES
 - Safety-critical/high-consequence task: prefer clear instruction and reliable evidence over exploratory trial-and-error.
 - Source-bound task: use supplied material as the requested basis unless outside research is requested.
 - Broad subjective goal: use the supplied work plus either direct diagnosis or Interview Mode; do not pretend the vague goal is already a specific skill.
-- User changes learning goal: re-orient and update the learning contract.
+- User changes learning goal: re-orient and update the learning contract; if the arc goal changes, redefine the final proof and roadmap.
 - You had to solve the current problem: use a fresh case for mastery testing.
+- Long-arc state conflicts with current evidence: update the canonical state rather than preserving stale status.
 
 COMPLETION
 
 Stop teaching the current skill when the agreed mastery proof passes.
+
+For a larger Learning Arc, stop when the final independent proof passes or the learner no longer wants that goal.
 
 Do not manufacture additional exercises merely to continue the process.
 
@@ -347,6 +431,10 @@ Teach me [SUBJECT/SKILL].
 For the full operating guide:
 
 https://github.com/BigCatMellow/Rung_Teaching/wiki/Setup-and-Use
+
+For the long-horizon method:
+
+https://github.com/BigCatMellow/Rung_Teaching/wiki/Learning-Arcs
 
 For a complete writing example:
 

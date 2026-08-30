@@ -6,6 +6,7 @@
 - [AI Agent Instructions](AI-Agent-Instructions)
 - [TeachMe Agent Skill](Agent-Skills)
 - [Getting Started](Getting-Started)
+- [Learning Arcs](Learning-Arcs)
 - [Teaching Loop](Teaching-Loop)
 - [Assistance Ladder](Assistance-Ladder)
 - [Diagnosing Mistakes](Diagnosing-Mistakes)
